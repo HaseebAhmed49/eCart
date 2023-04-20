@@ -12,6 +12,11 @@ namespace eCart.API.Models
         public double Price { get; set; }
 
         public int Stock { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        public DateTime UpdatedAt { get; set; }
+
     }
 }
 
