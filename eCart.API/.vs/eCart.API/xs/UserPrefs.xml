@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{C9459B5B-78BE-4A19-BCE9-F8E1E9026FA1}|https">
-  <MonoDevelop.Ide.ItemProperties.eCart.API PreferredExecutionTarget="/Applications/Google Chrome.app" FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="eCart.API/Models/Product.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="eCart.API/Services/ProductService/IProductService.cs">
     <Files>
-      <File FileName="eCart.API/Models/Product.cs" Line="19" Column="1" />
+      <File FileName="eCart.API/Models/Product.cs" Line="4" Column="22" />
       <File FileName="eCart.API/Models/Customer.cs" Line="14" Column="1" />
       <File FileName="eCart.API/Models/Order.cs" Line="21" Column="8" />
+      <File FileName="eCart.API/Services/Product/IProductService.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,6 +17,8 @@
           <Node name="eCart.API" expanded="True">
             <Node name="eCart.API" expanded="True">
               <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -24,4 +26,5 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.eCart.API PreferredExecutionTarget="/Applications/Google Chrome.app" FirstBuild="True" />
 </Properties>

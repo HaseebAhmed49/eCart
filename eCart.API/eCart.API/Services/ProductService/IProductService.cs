@@ -1,7 +1,7 @@
 ﻿using System;
-using eCart.API.Models.Product;
+using eCart.API.Models;
 
-namespace eCart.API.Services.Product
+namespace eCart.API.Services.ProductService
 {
 	public interface IProductService
 	{
