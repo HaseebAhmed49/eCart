@@ -10,6 +10,9 @@ namespace eCart.API.Services.ProductService
 		public Task GetProducts();
 
 		public Task GetProductById(int id);
+
+		public Task UpdateProductById(int id);
+
+		public Task DeleteProductById(int id);
 	}
 }
-
