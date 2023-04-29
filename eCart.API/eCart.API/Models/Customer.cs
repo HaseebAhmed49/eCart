@@ -11,6 +11,8 @@ namespace eCart.API.Models
 
 		public string ContactNo { get; set; }
 
+		public string EmailAddress { get; set; }
+
 		public DateTime CreatedAt { get; set; } = DateTime.Now;
 
 		public DateTime UpdatedAt { get; set; }

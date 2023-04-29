@@ -12,6 +12,9 @@ namespace eCart.API.Models
 		public DateTime CreatedAt { get; set; }
 
 		public DateTime UpdatedAt { get; set; }
+
+		public int TotalAmount { get; set; }
+
 	}
 
 	public enum OrderStatus
