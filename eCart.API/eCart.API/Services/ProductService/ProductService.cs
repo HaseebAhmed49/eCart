@@ -1,38 +1,28 @@
 ﻿using System;
+using eCart.API.Data;
 using eCart.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace eCart.API.Services.ProductService
 {
 	public class ProductService: IProductService
 	{
-		public ProductService()
+
+        private readonly StoreContext _context;
+
+		public ProductService(StoreContext context)
 		{
+            _context = context;
 		}
 
-        public Task AddProduct(Product product)
+        public async Task<Product> GetProductByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Products.FindAsync(id);
         }
 
-        public Task DeleteProductById(int id)
+        public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task GetProductById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task GetProducts()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateProductById(int id)
-        {
-            throw new NotImplementedException();
+            return await _context.Products.ToListAsync();
         }
     }
 }
-

@@ -1,39 +1,29 @@
 ﻿<Properties StartupConfiguration="{C9459B5B-78BE-4A19-BCE9-F8E1E9026FA1}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.eCart.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="eCart.API/Properties/launchSettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="eCart.API/Controllers/ProductsController.cs">
     <Files>
-      <File FileName="eCart.API/Models/Product.cs" Line="19" Column="1" />
-      <File FileName="eCart.API/Models/Customer.cs" />
-      <File FileName="eCart.API/Models/Order.cs" />
-      <File FileName="eCart.API/Models/Account.cs" />
-      <File FileName="eCart.API/Services/ProductService/IProductService.cs" />
-      <File FileName="eCart.API/Services/ProductService/ProductService.cs" />
-      <File FileName="eCart.API/Controllers/ProductsController.cs" Line="39" Column="1" />
-      <File FileName="eCart.API/Controllers/WeatherForecastController.cs" />
-      <File FileName="eCart.API/Data/StoreContext.cs" Line="17" Column="1" />
+      <File FileName="eCart.API/Models/Product.cs" />
+      <File FileName="eCart.API/Services/ProductService/IProductService.cs" Line="13" Column="2" />
+      <File FileName="eCart.API/Services/ProductService/ProductService.cs" Line="23" Column="67" />
+      <File FileName="eCart.API/Controllers/ProductsController.cs" Line="35" Column="53" />
+      <File FileName="eCart.API/Data/StoreContext.cs" />
       <File FileName="eCart.API/appsettings.json" Line="1" Column="1" />
-      <File FileName="eCart.API/appsettings.Development.json" Line="5" Column="50" />
-      <File FileName="eCart.API/Program.cs" Line="15" Column="79" />
-      <File FileName="eCart.API/WeatherForecast.cs" Line="1" Column="1" />
-      <File FileName="eCart.API/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="eCart.API/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="eCart.API/Program.cs" Line="23" Column="1" />
+      <File FileName="eCart.API/Properties/launchSettings.json" />
+      <File FileName="../../../../../../usr/local/share/dotnet/x64/sdk/7.0.200/Microsoft.Common.CurrentVersion.targets" Line="4748" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="eCart.API" expanded="True">
             <Node name="eCart.API" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ProductsController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
-              </Node>
+              <Node name="Properties" expanded="True" />
               <Node name="Services" expanded="True">
                 <Node name="ProductService" expanded="True" />
               </Node>
@@ -44,4 +34,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.eCart.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

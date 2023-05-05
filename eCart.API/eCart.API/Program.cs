@@ -1,4 +1,5 @@
 ﻿using eCart.API.Data;
+using eCart.API.Services.ProductService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,9 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
