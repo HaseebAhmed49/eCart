@@ -1,5 +1,6 @@
 ﻿using eCart.API.Data;
 using eCart.API.Data.SeedData;
+using eCart.API.Services;
 using eCart.API.Services.ProductService;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,7 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 var app = builder.Build();
 

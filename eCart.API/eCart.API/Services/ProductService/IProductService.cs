@@ -6,6 +6,9 @@ namespace eCart.API.Services.ProductService
 {
 	public interface IProductService
 	{
+
+
+
 		public Task<IReadOnlyList<Product>> GetProductsAsync();
 
         public Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync();

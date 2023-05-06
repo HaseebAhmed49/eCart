@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using eCart.API.Data;
 using eCart.API.Models;
+using eCart.API.Services;
 using eCart.API.Services.ProductService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,39 +18,44 @@ namespace eCart.API.Controllers
     public class ProductsController : ControllerBase
     {
 
-        private readonly IProductService _repo;
+        private readonly IGenericRepository<Product> _productRepo;
+        private readonly IGenericRepository<ProductBrand> _productBrandRepo;
+        private readonly IGenericRepository<ProductType> _productTypeRepo;
 
-        public ProductsController(IProductService repo)
+
+        public ProductsController(IGenericRepository<Product> productsRepo,
+            IGenericRepository<ProductBrand> productBrandRepo, IGenericRepository<ProductType> productTypeRepo)
         {
-            _repo = repo;
+            _productRepo = productsRepo;
+            _productBrandRepo = productBrandRepo;
+            _productTypeRepo = productTypeRepo;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
-            var products = await _repo.GetProductsAsync();
+            var products = await _productRepo.ListAllAsync();
             return Ok(products);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProducts(int id)
         {
-            return await _repo.GetProductByIdAsync(id);
+            return await _productRepo.GetByIdAsync(id);
         }
 
         [HttpGet("brands")]
         public async Task<ActionResult<List<ProductBrand>>> GetProductBrands()
         {
-            var productBrands = await _repo.GetProductBrandsAsync();
+            var productBrands = await _productBrandRepo.ListAllAsync();
             return Ok(productBrands);
         }
 
         [HttpGet("types")]
         public async Task<ActionResult<List<ProductType>>> GetProductTypes()
         {
-            var productTypes = await _repo.GetProductTypesAsync();
+            var productTypes = await _productTypeRepo.ListAllAsync();
             return Ok(productTypes);
         }
     }
 }
-
