@@ -41,5 +41,9 @@
     <Folder Include="Data\Services\" />
     <Folder Include="Data\DTOs\" />
     <Folder Include="Data\Helpers\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
   </ItemGroup>
 </Project>
