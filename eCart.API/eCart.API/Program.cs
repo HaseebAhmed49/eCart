@@ -1,4 +1,5 @@
 ﻿using eCart.API.Data;
+using eCart.API.Data.Middleware;
 using eCart.API.Data.SeedData;
 using eCart.API.Services;
 using eCart.API.Services.ProductService;
@@ -26,6 +27,13 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+// Custom Middleware
+app.UseMiddleware<ExceptionMiddleware>();
+
+//// Unknown EndPoint
+app.UseStatusCodePagesWithReExecute("/errors/{0}");
+
+
 
 if (app.Environment.IsDevelopment())
 {
