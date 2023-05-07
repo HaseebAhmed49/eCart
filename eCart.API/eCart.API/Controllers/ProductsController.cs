@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using eCart.API.Data;
 using eCart.API.Data.DTOs;
+using eCart.API.Data.Errors;
 using eCart.API.Data.Specifications;
 using eCart.API.Models;
 using eCart.API.Services;
@@ -45,6 +46,8 @@ namespace eCart.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductToReturnDTO>> GetProduct(int id)
         {
             ////Working Code
@@ -54,7 +57,7 @@ namespace eCart.API.Controllers
 
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
             var product = await _productRepo.GetEntityWithSpec(spec);
-
+            if (product == null) return NotFound(new ApiResponse(404));
             return _mapper.Map<Product, ProductToReturnDTO>(product);
         }
 

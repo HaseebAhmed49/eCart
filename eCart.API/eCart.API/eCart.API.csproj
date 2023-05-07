@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -33,6 +33,7 @@
     <None Remove="Data\Helpers\" />
     <None Remove="Data\Errors\" />
     <None Remove="Data\Middleware\" />
+    <None Remove="Data\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -46,6 +47,7 @@
     <Folder Include="wwwroot\" />
     <Folder Include="Data\Errors\" />
     <Folder Include="Data\Middleware\" />
+    <Folder Include="Data\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

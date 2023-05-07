@@ -1,8 +1,11 @@
 ﻿using eCart.API.Data;
+using eCart.API.Data.Errors;
+using eCart.API.Data.Extensions;
 using eCart.API.Data.Middleware;
 using eCart.API.Data.SeedData;
 using eCart.API.Services;
 using eCart.API.Services.ProductService;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,19 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<StoreContext>(opt =>
-{
-    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-
-builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
 
