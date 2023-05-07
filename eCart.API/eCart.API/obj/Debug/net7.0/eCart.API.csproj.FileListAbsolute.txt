@@ -1,5 +1,8 @@
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/appsettings.Development.json
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/appsettings.json
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Data/SeedData/brands.json
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Data/SeedData/products.json
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Data/SeedData/types.json
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/eCart.API
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/eCart.API.deps.json
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/eCart.API.runtimeconfig.json
@@ -67,6 +70,5 @@
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/obj/Debug/net7.0/eCart.API.pdb
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/obj/Debug/net7.0/eCart.API.genruntimeconfig.cache
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/obj/Debug/net7.0/ref/eCart.API.dll
-/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Data/SeedData/brands.json
-/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Data/SeedData/products.json
-/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Data/SeedData/types.json
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/AutoMapper.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "HTjjPRsNeVk76l9Wl+xuYsxnz0M1pWe7XN5DG7J20yCU0z41zlNfoWuthH8ZGBIGAejsbTd8yrppxlE6AerKKw==",
+  "dgSpecHash": "1FdneAM7++ghfcmxpX06w8uisktKQ31RkYq2LjV7F7M8HBHn4QFQhGuFmMWHaZ9JylsW1SdvdYX/T9d7dcTvuA==",
   "success": true,
   "projectFilePath": "/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/eCart.API.csproj",
   "expectedPackageFiles": [
+    "/Users/haseebahmed/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/haseebahmed/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/haseebahmed/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/haseebahmed/.nuget/packages/microsoft.aspnetcore.openapi/7.0.5/microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
+    "/Users/haseebahmed/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/haseebahmed/.nuget/packages/microsoft.data.sqlite.core/7.0.5/microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
     "/Users/haseebahmed/.nuget/packages/microsoft.entityframeworkcore/7.0.5/microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "/Users/haseebahmed/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.5/microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",

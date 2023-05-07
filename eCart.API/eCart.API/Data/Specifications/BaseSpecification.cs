@@ -25,4 +25,3 @@ namespace eCart.API.Data.Specifications
 		}
     }
 }
-

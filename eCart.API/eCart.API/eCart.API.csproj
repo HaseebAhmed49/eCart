@@ -16,24 +16,30 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Models\" />
-    <None Remove="Services\" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Data\" />
     <None Remove="Data\Config\" />
     <None Remove="Data\SeedData\" />
     <None Remove="Data\Specifications\" />
+    <None Remove="Data\Models\" />
+    <None Remove="Data\Services\" />
+    <None Remove="Data\DTOs\" />
+    <None Remove="Data\Helpers\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
     <Folder Include="Data\" />
     <Folder Include="Data\Config\" />
     <Folder Include="Data\SeedData\" />
     <Folder Include="Data\Specifications\" />
+    <Folder Include="Data\Models\" />
+    <Folder Include="Data\Services\" />
+    <Folder Include="Data\DTOs\" />
+    <Folder Include="Data\Helpers\" />
   </ItemGroup>
 </Project>
