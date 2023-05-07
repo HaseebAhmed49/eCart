@@ -1,4 +1,5 @@
 ﻿using System;
+using eCart.API.Data.Specifications;
 using eCart.API.Models;
 
 namespace eCart.API.Services
@@ -8,6 +9,10 @@ namespace eCart.API.Services
         Task<T> GetByIdAsync(int id);
 
         Task<IReadOnlyList<T>> ListAllAsync();
+
+        Task<T> GetEntityWithSpec(ISpecification<T> spec);
+
+        Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
 	}
 }
 

@@ -26,6 +26,7 @@
     <None Remove="Data\" />
     <None Remove="Data\Config\" />
     <None Remove="Data\SeedData\" />
+    <None Remove="Data\Specifications\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -33,5 +34,6 @@
     <Folder Include="Data\" />
     <Folder Include="Data\Config\" />
     <Folder Include="Data\SeedData\" />
+    <Folder Include="Data\Specifications\" />
   </ItemGroup>
 </Project>
