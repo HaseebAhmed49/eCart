@@ -17,7 +17,17 @@ namespace eCart.API.Services
 				query = query.Where(spec.Criteria); // p => p.ProductTypeId
 			}
 
-			query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
+            if (spec.OrderBy != null)
+            {
+                query = query.OrderBy(spec.OrderBy);
+			}
+
+            if (spec.OrderByDescending != null)
+            {
+                query = query.OrderByDescending(spec.OrderByDescending);
+            }
+
+            query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
 
 			return query;
 		}
