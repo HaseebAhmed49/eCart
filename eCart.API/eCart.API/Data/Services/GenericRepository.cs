@@ -36,9 +36,15 @@ namespace eCart.API.Services.ProductService
             return await ApplySpecitfication(spec).ToListAsync();
         }
 
+        public async Task<int> CountAsync(ISpecification<T> spec)
+        {
+            return await ApplySpecitfication(spec).CountAsync();
+        }
+
         private IQueryable<T> ApplySpecitfication(ISpecification<T> spec)
         {
             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
         }
+
     }
 }

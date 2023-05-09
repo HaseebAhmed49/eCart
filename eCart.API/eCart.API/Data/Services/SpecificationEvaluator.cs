@@ -17,6 +17,8 @@ namespace eCart.API.Services
 				query = query.Where(spec.Criteria); // p => p.ProductTypeId
 			}
 
+           
+
             if (spec.OrderBy != null)
             {
                 query = query.OrderBy(spec.OrderBy);
@@ -25,6 +27,11 @@ namespace eCart.API.Services
             if (spec.OrderByDescending != null)
             {
                 query = query.OrderByDescending(spec.OrderByDescending);
+            }
+
+            if (spec.isPagingEnabled)
+            {
+                query = query.Skip(spec.Skip).Take(spec.Take);
             }
 
             query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));

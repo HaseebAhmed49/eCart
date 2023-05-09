@@ -5,19 +5,21 @@ namespace eCart.API.Data.Specifications
 {
 	public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
 	{
-		public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId)
+		public ProductsWithTypesAndBrandsSpecification(ProductSpecParams specParams)
             : base(x =>
-                (!brandId.HasValue || x.ProductBrandId == brandId) &&
-                (!typeId.HasValue || x.ProductTypeId == typeId)
+                (!specParams.brandId.HasValue || x.ProductBrandId == specParams.brandId) &&
+                (!specParams.typeId.HasValue || x.ProductTypeId == specParams.typeId)
             )
 		{
 			AddInclude(x => x.ProductBrand);
 			AddInclude(x => x.ProductType);
 			AddOrderBy(x => x.Name);
+            ApplyPaging(specParams.PageSize * (specParams.PageIndex - 1),
+                specParams.PageSize);
 
-			if(!string.IsNullOrEmpty(sort))
+			if(!string.IsNullOrEmpty(specParams.sort))
 			{
-                switch (sort)
+                switch (specParams.sort)
                 {
                     case "priceAsc":
                         AddOrderBy(p => p.Price);
