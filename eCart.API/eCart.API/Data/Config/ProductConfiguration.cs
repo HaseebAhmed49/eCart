@@ -7,6 +7,7 @@ namespace eCart.API.Data.Config
 {
     public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
+        // Entity detailed relationship explanation
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.Property(p => p.Id).IsRequired();
