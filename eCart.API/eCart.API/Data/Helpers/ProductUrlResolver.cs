@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace eCart.API.Data.Helpers
 {
+    // Resolver for Product Picture
     public class ProductUrlResolver : IValueResolver<Product, ProductToReturnDTO, string>
     {
         private readonly IConfiguration _config;
