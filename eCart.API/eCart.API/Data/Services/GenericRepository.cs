@@ -8,6 +8,7 @@ namespace eCart.API.Services.ProductService
 {
 	public class GenericRepository<T> : IGenericRepository<T> where T:BaseEntity
 	{
+        // Generic Repository Pattern and Specification Repository Pattern
         private readonly StoreContext _context;
 
         public GenericRepository(StoreContext context)
