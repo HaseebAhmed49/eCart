@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{C9459B5B-78BE-4A19-BCE9-F8E1E9026FA1}|https">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/Data/Errors/ApiResponse.cs" relfile="eCart.API/Data/Errors/ApiResponse.cs" line="21" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.eCart.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="eCart.API/Data/Services/GenericRepository.cs">
     <Files>
       <File FileName="eCart.API/Controllers/ProductsController.cs" />
@@ -14,10 +14,10 @@
       <File FileName="eCart.API/Data/Specifications/BaseSpecification.cs" />
       <File FileName="eCart.API/Data/DTOs/ProductToReturnDTO.cs" />
       <File FileName="eCart.API/Data/Models/Product.cs" />
-      <File FileName="eCart.API/Data/Helpers/MappingProfiles.cs" Line="9" Column="3" />
+      <File FileName="eCart.API/Data/Helpers/MappingProfiles.cs" />
       <File FileName="eCart.API/Program.cs" />
       <File FileName="eCart.API/appsettings.Development.json" />
-      <File FileName="eCart.API/Data/Helpers/ProductUrlResolver.cs" Line="9" Column="36" />
+      <File FileName="eCart.API/Data/Helpers/ProductUrlResolver.cs" />
       <File FileName="eCart.API/Data/Config/ProductConfiguration.cs" />
       <File FileName="eCart.API/Controllers/BaseApiController.cs" />
       <File FileName="eCart.API/Controllers/BuggyController.cs" />
@@ -60,5 +60,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.eCart.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
 </Properties>
