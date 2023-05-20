@@ -41,13 +41,19 @@ namespace eCart.API.Controllers
         public async Task<ActionResult<Pagination<ProductToReturnDTO>>> GetProducts(
             [FromQuery] ProductSpecParams specParams)
         {
+            // Generate Specs
             var spec = new ProductsWithTypesAndBrandsSpecification(specParams);
 
+            // Count Spec
             var countSpec = new ProductWithFiltersForCountSpecification(specParams);
 
+            // Total Items
             var totalItems = await _productRepo.CountAsync(countSpec);
 
+            // Total Products
             var products = await _productRepo.ListAsync(spec);
+
+            // Mapping data using Auto Mapper
             var data = _mapper
                 .Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDTO>>(products);
 
