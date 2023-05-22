@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{C9459B5B-78BE-4A19-BCE9-F8E1E9026FA1}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.eCart.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="eCart.API/Data/Extensions/ApplicationServicesExtensions.cs">
     <Files>
       <File FileName="eCart.API/Controllers/ProductsController.cs" />
@@ -8,7 +8,7 @@
       <File FileName="eCart.API/appsettings.json" />
       <File FileName="eCart.API/appsettings.Development.json" />
       <File FileName="eCart.API/Program.cs" />
-      <File FileName="eCart.API/Data/Extensions/ApplicationServicesExtensions.cs" Line="49" Column="79" />
+      <File FileName="eCart.API/Data/Extensions/ApplicationServicesExtensions.cs" Line="56" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,11 +30,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/Data/Errors/ApiResponse.cs" relfile="eCart.API/Data/Errors/ApiResponse.cs" line="21" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
 </Properties>

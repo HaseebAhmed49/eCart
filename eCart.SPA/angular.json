@@ -30,9 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "/Users/haseebahmed/Desktop/dotNet/eCart/eCart.SPA/node_modules/bootstrap/dist/css/bootstrap.css",
-              "/Users/haseebahmed/Desktop/dotNet/eCart/eCart.SPA/node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "/Users/haseebahmed/Desktop/dotNet/eCart/eCart.SPA/node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.scss"
             ],
             "scripts": []
