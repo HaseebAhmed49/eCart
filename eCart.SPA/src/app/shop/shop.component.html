@@ -1,7 +1,54 @@
-<ul>
-    <!-- ngFor are directives -->
-   <li class="list-unstyled" *ngFor="let product of products">
-         <!--  Interpolation -->
-         {{product.name}}
-   </li>
- </ul>
+ <div class="container">
+      <div class="row">
+            <section class="col-3">
+                  <h5 class="text-warning ms-3">Sort</h5>
+                  <select class="form-select mb-4">
+                        <option selected>Alphabetical</option>
+                        <option>Price: Low to high</option>
+                        <option>Price: High to Low</option>
+                  </select>
+
+                  <h5 class="text-warning my-3">Brands</h5>
+
+                        <ul class="list-group">
+                              <li class="list-group-item active" aria-current="true">An active item</li>
+                              <li class="list-group-item">A second item</li>
+                              <li class="list-group-item">A third item</li>
+                              <li class="list-group-item">A fourth item</li>
+                              <li class="list-group-item">And a fifth one</li>
+                            </ul>
+
+                            <h5 class="text-warning my-3">Types</h5>
+
+                            <ul class="list-group">
+                                  <li class="list-group-item active" aria-current="true">An active item</li>
+                                  <li class="list-group-item">A second item</li>
+                                  <li class="list-group-item">A third item</li>
+                                  <li class="list-group-item">A fourth item</li>
+                                  <li class="list-group-item">And a fifth one</li>
+                                </ul>
+    
+            </section>
+            <section class="col-9">
+                  <div class="d-flex justify-content-between align-items-center pb-2">
+                        <header>
+                              <span>Showing <strong>10</strong> of <strong>18</strong> Results</span>
+                        </header>
+                        <div class="d-flex mt-2">
+                              <input class="form-control me-2" placeholder="Search" type="text">
+                              <button class="btn btn-outline-primary mx-2">Search</button>
+                              <button class="btn btn-outline-success">Reset</button>
+                        </div>
+
+                  </div>
+
+
+
+                  <div class="row row-cols-3 g-3">
+                        <div class="col" *ngFor="let product of products">
+                              <app-product-item [product]="product"></app-product-item>
+                        </div>
+                  </div>
+            </section>
+      </div>
+ </div>
