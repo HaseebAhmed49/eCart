@@ -14,7 +14,10 @@ export class ProductDetailsComponent implements OnInit{
   
   constructor(private shopService: ShopService,
     private activatedRoute: ActivatedRoute,
-    private bcService: BreadcrumbService){}
+    private bcService: BreadcrumbService){
+      // Added this to set the product name in breadcrumb to null and once loading will done, name will be refreshed as in below method.
+      this.bcService.set('@productDetails',' ');
+    }
 
   ngOnInit(): void{
     this.loadProduct();
