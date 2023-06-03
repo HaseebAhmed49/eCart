@@ -73,3 +73,5 @@
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/AutoMapper.dll
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/eCart.API.staticwebassets.runtime.json
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Pipelines.Sockets.Unofficial.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/StackExchange.Redis.dll

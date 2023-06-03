@@ -18,6 +18,7 @@
     </PackageReference>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="StackExchange.Redis" Version="2.6.111" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +35,7 @@
     <None Remove="Data\Errors\" />
     <None Remove="Data\Middleware\" />
     <None Remove="Data\Extensions\" />
+    <None Remove="Data\Services\Basket\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -48,6 +50,7 @@
     <Folder Include="Data\Errors\" />
     <Folder Include="Data\Middleware\" />
     <Folder Include="Data\Extensions\" />
+    <Folder Include="Data\Services\Basket\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

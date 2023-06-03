@@ -1,9 +1,11 @@
 ﻿using System;
 using eCart.API.Data.Errors;
+using eCart.API.Data.Services.Basket;
 using eCart.API.Services;
 using eCart.API.Services.ProductService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 
 namespace eCart.API.Data.Extensions
 {
@@ -20,7 +22,16 @@ namespace eCart.API.Data.Extensions
                 opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
 
+            // Redis for Basket
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
+                var options = ConfigurationOptions.Parse(config.GetConnectionString("Redis"));
 
+                return ConnectionMultiplexer.Connect(options);
+            });
+            services.AddScoped<IBasketRepository, BasketRepository>();
+
+            // Product Related Services DI
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
