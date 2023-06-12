@@ -75,3 +75,15 @@
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/eCart.API.staticwebassets.runtime.json
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Pipelines.Sockets.Unofficial.dll
 /Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/StackExchange.Redis.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.Extensions.Identity.Core.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.Extensions.Options.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/bin/Debug/net7.0/System.Security.Permissions.dll

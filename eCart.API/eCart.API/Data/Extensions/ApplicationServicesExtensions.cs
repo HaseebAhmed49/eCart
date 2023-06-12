@@ -26,7 +26,6 @@ namespace eCart.API.Data.Extensions
             services.AddSingleton<IConnectionMultiplexer>(c =>
             {
                 var options = ConfigurationOptions.Parse(config.GetConnectionString("Redis"));
-
                 return ConnectionMultiplexer.Connect(options);
             });
             services.AddScoped<IBasketRepository, BasketRepository>();

@@ -19,6 +19,11 @@
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="StackExchange.Redis" Version="2.6.111" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.31.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.31.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +41,10 @@
     <None Remove="Data\Middleware\" />
     <None Remove="Data\Extensions\" />
     <None Remove="Data\Services\Basket\" />
+    <None Remove="Data\Models\Identity\" />
+    <None Remove="Data\Identity\" />
+    <None Remove="Data\DTOs\Identity\" />
+    <None Remove="Data\Services\Identity\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -51,6 +60,10 @@
     <Folder Include="Data\Middleware\" />
     <Folder Include="Data\Extensions\" />
     <Folder Include="Data\Services\Basket\" />
+    <Folder Include="Data\Models\Identity\" />
+    <Folder Include="Data\Identity\" />
+    <Folder Include="Data\DTOs\Identity\" />
+    <Folder Include="Data\Services\Identity\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
