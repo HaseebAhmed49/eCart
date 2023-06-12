@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using eCart.API.Data.DTOs.Identity;
 using eCart.API.Data.Errors;
 using eCart.API.Data.Models.Identity;
+using eCart.API.Data.Services.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,10 +19,13 @@ namespace eCart.API.Controllers
 
         private readonly SignInManager<AppUser> _signInManager;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        private readonly ITokenService _tokenService;
+
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _tokenService = tokenService;
         }
 
         [HttpPost("login")]
@@ -37,7 +41,8 @@ namespace eCart.API.Controllers
             return new UserDTO
             {
                 Email = user.Email,
-                Token = "this will be token",
+                // JSON Web Token
+                Token = _tokenService.CreateToken(user),
                 DisplayName = user.DisplayName
             };
         }
@@ -59,7 +64,8 @@ namespace eCart.API.Controllers
             return new UserDTO
             {
                 Email = user.Email,
-                Token = "this will be token",
+                // JSON Web Token
+                Token = _tokenService.CreateToken(user),
                 DisplayName = user.DisplayName
             };
         }
