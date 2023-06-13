@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Text;
 using eCart.API.Data.Identity;
 using eCart.API.Data.Models.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace eCart.API.Data.Extensions
 {
@@ -22,7 +25,18 @@ namespace eCart.API.Data.Extensions
 			}).AddEntityFrameworkStores<AppIdentityDbContext>()
 			.AddSignInManager<SignInManager<AppUser>>();
 
-			services.AddAuthentication();
+			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+				.AddJwtBearer(options =>
+				{
+					options.TokenValidationParameters = new TokenValidationParameters
+					{
+						ValidateIssuerSigningKey = true,
+						IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Token:Key"])),
+						ValidIssuer = config["Token:Issuer"],
+						ValidateIssuer = true,
+					};
+				});
+
 			services.AddAuthorization();
 
 			return services;
