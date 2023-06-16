@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using eCart.API.Data.DTOs.Identity;
 using eCart.API.Data.Errors;
+using eCart.API.Data.Extensions;
 using eCart.API.Data.Models.Identity;
 using eCart.API.Data.Services.Identity;
 using Microsoft.AspNetCore.Authorization;
@@ -54,16 +55,6 @@ namespace eCart.API.Controllers
             return await _userManager.FindByEmailAsync(email) != null;
         }
 
-        [Authorize]
-        [HttpGet("address")]
-        public async Task<ActionResult<Address>> GetUserAddress()
-        {
-            var email = HttpContext.User?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
-
-            var user = await _userManager.FindByEmailAsync(email);
-
-            return user.Address;
-        }
 
 
         [HttpPost("login")]
@@ -107,5 +98,14 @@ namespace eCart.API.Controllers
                 DisplayName = user.DisplayName
             };
         }
+
+        [Authorize]
+        [HttpGet("address")]
+        public async Task<ActionResult<Address>> GetUserAddress()
+        {
+            var user = await _userManager.FindByEmailFromClaimPrincipal(User);
+            return user.Address;
+        }
+
     }
 }
