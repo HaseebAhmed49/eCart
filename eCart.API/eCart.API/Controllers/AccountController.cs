@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using AutoMapper;
 using eCart.API.Data.DTOs.Identity;
 using eCart.API.Data.Errors;
 using eCart.API.Data.Extensions;
@@ -24,20 +25,21 @@ namespace eCart.API.Controllers
 
         private readonly ITokenService _tokenService;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService)
+        private readonly IMapper _mapper;
+
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenService = tokenService;
+            _mapper = mapper;
         }
 
         [Authorize]
         [HttpGet]
         public async Task<ActionResult<UserDTO>> GetCurrentUser()
         {
-            var email = HttpContext.User?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
-
-            var user = await _userManager.FindByEmailAsync(email);
+            var user = await _userManager.FindByEmailFromClaimPrincipal(User);
 
             return new UserDTO
             {
@@ -101,11 +103,25 @@ namespace eCart.API.Controllers
 
         [Authorize]
         [HttpGet("address")]
-        public async Task<ActionResult<Address>> GetUserAddress()
+        public async Task<ActionResult<AddressDTO>> GetUserAddress()
         {
             var user = await _userManager.FindByEmailFromClaimPrincipal(User);
-            return user.Address;
+            return _mapper.Map<Address, AddressDTO>(user.Address);
         }
 
+        [Authorize]
+        [HttpPut("address")]
+        public async Task<ActionResult<AddressDTO>> UpdateUserAddress(AddressDTO address)
+        {
+            var user = await _userManager.FindUserByClaimsPrincipalWithAddress(HttpContext.User);
+
+            user.Address = _mapper.Map<AddressDTO, Address>(address);
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if (result.Succeeded) return Ok(_mapper.Map<Address, AddressDTO>(user.Address));
+
+            return BadRequest("Problem updating the user");
+        }
     }
 }

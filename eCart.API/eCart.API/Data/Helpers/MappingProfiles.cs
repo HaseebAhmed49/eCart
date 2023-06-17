@@ -1,6 +1,8 @@
 ﻿using System;
 using AutoMapper;
 using eCart.API.Data.DTOs;
+using eCart.API.Data.DTOs.Identity;
+using eCart.API.Data.Models.Identity;
 using eCart.API.Models;
 
 namespace eCart.API.Data.Helpers
@@ -13,6 +15,8 @@ namespace eCart.API.Data.Helpers
 				.ForMember(d => d.ProductBrand, o => o.MapFrom(s => s.ProductBrand.Name))
 				.ForMember(d => d.ProductType, o => o.MapFrom(s => s.ProductType.Name))
 				.ForMember(d => d.PictureUrl, o => o.MapFrom<ProductUrlResolver>());
+
+			CreateMap<Address, AddressDTO>().ReverseMap();
         }
     }
 }
