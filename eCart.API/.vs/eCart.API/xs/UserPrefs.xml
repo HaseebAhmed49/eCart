@@ -1,55 +1,41 @@
 ﻿<Properties StartupConfiguration="{C9459B5B-78BE-4A19-BCE9-F8E1E9026FA1}|https">
-  <MonoDevelop.Ide.ItemProperties.eCart.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/Data/Errors/ApiResponse.cs" relfile="eCart.API/Data/Errors/ApiResponse.cs" line="21" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.eCart.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="eCart.API/appsettings.Development.json">
     <Files>
-      <File FileName="eCart.API/Data/Extensions/IdentityServiceExtensions.cs" />
       <File FileName="eCart.API/Program.cs" />
-      <File FileName="eCart.API/appsettings.json" />
-      <File FileName="eCart.API/appsettings.Development.json" Line="2" Column="2" />
       <File FileName="eCart.API/Data/Extensions/ApplicationServicesExtensions.cs" />
-      <File FileName="eCart.API/Data/StoreContext.cs" />
-      <File FileName="eCart.API/Data/Identity/AppIdentityDbContext.cs" />
-      <File FileName="eCart.API/Data/Models/Identity/Address.cs" />
-      <File FileName="eCart.API/Data/Models/Identity/AppUser.cs" />
-      <File FileName="eCart.API/Migrations/AppIdentityDb/20230611215114_IdentityInitial.cs" />
-      <File FileName="eCart.API/Data/Models/Identity/AppIdentityDbContextSeed.cs" />
-      <File FileName="eCart.API/Controllers/AccountController.cs" />
-      <File FileName="eCart.API/Controllers/BasketController.cs" />
-      <File FileName="eCart.API/Controllers/BuggyController.cs" />
-      <File FileName="eCart.API/Controllers/BaseApiController.cs" />
-      <File FileName="eCart.API/Data/DTOs/Identity/UserDTO.cs" />
-      <File FileName="eCart.API/Data/DTOs/Identity/LoginDTO.cs" />
-      <File FileName="eCart.API/Data/DTOs/Identity/RegisterDTO.cs" />
-      <File FileName="eCart.API/Data/Services/Identity/ITokenService.cs" />
-      <File FileName="eCart.API/Data/Services/Identity/TokenService.cs" />
+      <File FileName="eCart.API/Data/Extensions/IdentityServiceExtensions.cs" Line="42" Column="1" />
+      <File FileName="eCart.API/Controllers/AccountController.cs" Line="127" Column="2" />
+      <File FileName="eCart.API/Data/Helpers/MappingProfiles.cs" />
+      <File FileName="eCart.API/appsettings.Development.json" Line="18" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="eCart.API" expanded="True">
             <Node name="eCart.API" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Dependencies" expanded="True" />
               <Node name="Data" expanded="True">
-                <Node name="DTOs" expanded="True">
-                  <Node name="Identity" expanded="True" />
-                </Node>
                 <Node name="Extensions" expanded="True" />
+                <Node name="Helpers" expanded="True" />
                 <Node name="Identity" expanded="True" />
-                <Node name="Models" expanded="True" />
-                <Node name="Services" expanded="True">
+                <Node name="Middleware" expanded="True" />
+                <Node name="Models" expanded="True">
                   <Node name="Identity" expanded="True" />
                 </Node>
               </Node>
               <Node name="Migrations" expanded="True" />
-              <Node name="appsettings.json" expanded="True" />
+              <Node name="appsettings.json" expanded="True">
+                <Node name="appsettings.Development.json" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
