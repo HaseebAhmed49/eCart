@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using eCart.API.Data.DTOs.Basket;
 using eCart.API.Data.Models;
 using eCart.API.Data.Services.Basket;
 using Microsoft.AspNetCore.Mvc;
@@ -14,9 +16,12 @@ namespace eCart.API.Controllers
     {
         private readonly IBasketRepository _basketRepository;
 
-        public BasketController(IBasketRepository basketRepository)
+        private readonly IMapper _mapper;
+
+        public BasketController(IBasketRepository basketRepository, IMapper mapper)
         {
             _basketRepository = basketRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -27,12 +32,14 @@ namespace eCart.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<CustomerBasket>> UpdateBasket(CustomerBasket basket)
+        public async Task<ActionResult<CustomerBasket>> UpdateBasket(CustomerBasketDTO basket)
         {
-            var updatedBasket = await _basketRepository.UpdateBasketAsync(basket);
+            var customerBasket = _mapper.Map<CustomerBasketDTO, CustomerBasket>(basket);
+
+            var updatedBasket = await _basketRepository.UpdateBasketAsync(custosmerBasket);
             return Ok(updatedBasket);
         }
-
+        
         [HttpDelete]
         public async Task DeleteBasketAsync(string id)
         {

@@ -45,6 +45,7 @@
     <None Remove="Data\Identity\" />
     <None Remove="Data\DTOs\Identity\" />
     <None Remove="Data\Services\Identity\" />
+    <None Remove="Data\DTOs\Basket\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -64,6 +65,7 @@
     <Folder Include="Data\Identity\" />
     <Folder Include="Data\DTOs\Identity\" />
     <Folder Include="Data\Services\Identity\" />
+    <Folder Include="Data\DTOs\Basket\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
