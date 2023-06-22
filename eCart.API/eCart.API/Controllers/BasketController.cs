@@ -36,7 +36,7 @@ namespace eCart.API.Controllers
         {
             var customerBasket = _mapper.Map<CustomerBasketDTO, CustomerBasket>(basket);
 
-            var updatedBasket = await _basketRepository.UpdateBasketAsync(custosmerBasket);
+            var updatedBasket = await _basketRepository.UpdateBasketAsync(customerBasket);
             return Ok(updatedBasket);
         }
         
