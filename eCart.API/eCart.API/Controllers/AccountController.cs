@@ -57,8 +57,6 @@ namespace eCart.API.Controllers
             return await _userManager.FindByEmailAsync(email) != null;
         }
 
-
-
         [HttpPost("login")]
         public async Task<ActionResult<UserDTO>> Login(LoginDTO loginDTO)
         {
