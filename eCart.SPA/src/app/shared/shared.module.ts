@@ -6,7 +6,7 @@ import { PagerComponent } from './pager/pager.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { OrderTotalsComponent } from './order-totals/order-totals.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     // forRoot is used to be as a singleton. Shared by other components as well.
     PaginationModule.forRoot(),
     CarouselModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDropdownModule.forRoot()
   ],
   exports: [
     PaginationModule,
@@ -28,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PagerComponent,
     CarouselModule,
     OrderTotalsComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDropdownModule
   ]
 })
 export class SharedModule { }
