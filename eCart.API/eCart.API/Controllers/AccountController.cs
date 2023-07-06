@@ -81,7 +81,7 @@ namespace eCart.API.Controllers
         {
             if(CheckEmailExistsAsync(registerDTO.Email).Result.Value)
             {
-                return BadRequestObjectResult(new ApiValidationErrorResponse{Errors = new[] {"Email Address is in use"}});
+                return BadRequest(new ApiValidationErrorResponse{Errors = new[] {"Email Address is in use"}});
             }
 
             var user = new AppUser

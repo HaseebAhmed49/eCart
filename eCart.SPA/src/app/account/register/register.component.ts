@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-
+  errors: string[] | null = null;
 
   constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router){}
 
@@ -24,7 +24,8 @@ export class RegisterComponent {
 
   onSubmit(){
     this.accountService.register(this.registerForm.value).subscribe({
-      next: () => this.router.navigateByUrl('/shop')
+      next: () => this.router.navigateByUrl('/shop'),
+      error: error => this.errors = error.errors
     })
   }
 }
