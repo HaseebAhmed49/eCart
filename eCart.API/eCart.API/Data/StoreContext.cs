@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using eCart.API.Data.Models.OrderAggregate;
 using eCart.API.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,12 @@ namespace eCart.API.Data
 		public DbSet<ProductType> ProductTypes { get; set; }
 
 		public DbSet<ProductBrand> ProductBrands { get; set; }
+
+		public DbSet<Order> Order { get; set; }
+
+		public DbSet<OrderItem> OrderItems { get; set; }
+
+		public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

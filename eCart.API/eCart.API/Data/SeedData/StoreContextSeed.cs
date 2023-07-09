@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.Json;
+using eCart.API.Data.Models.OrderAggregate;
 using eCart.API.Models;
 
 namespace eCart.API.Data.SeedData
@@ -29,6 +30,13 @@ namespace eCart.API.Data.SeedData
                 var productsData = File.ReadAllText("/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/Data/SeedData/products.json");
                 var products = JsonSerializer.Deserialize<List<Product>>(productsData);
                 context.Products.AddRange(products);
+            }
+
+            if (!context.DeliveryMethods.Any())
+            {
+                var deliveryData = File.ReadAllText("/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/Data/SeedData/delivery.json");
+                var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
+                context.DeliveryMethods.AddRange(methods);
             }
 
             if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();

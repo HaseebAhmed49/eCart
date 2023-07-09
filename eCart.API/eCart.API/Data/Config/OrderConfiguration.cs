@@ -13,6 +13,9 @@ namespace eCart.API.Data.Config
             {
                 a.WithOwner();
             });
+
+            builder.Navigation(a => a.ShipToAddress).IsRequired();
+
             builder.Property(s => s.Status)
                 .HasConversion(
                     o => o.ToString(),
