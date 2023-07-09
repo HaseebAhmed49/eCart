@@ -49,6 +49,7 @@
     <None Remove="Data\Models\OrderAggregate\" />
     <None Remove="Data\Services\Order\" />
     <None Remove="Data\DTOs\Order\" />
+    <None Remove="Data\Services\UoW\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -72,6 +73,7 @@
     <Folder Include="Data\Models\OrderAggregate\" />
     <Folder Include="Data\Services\OrderService\" />
     <Folder Include="Data\DTOs\Order\" />
+    <Folder Include="Data\Services\UoW\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
