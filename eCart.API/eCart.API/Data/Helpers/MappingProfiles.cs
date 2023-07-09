@@ -23,6 +23,8 @@ namespace eCart.API.Data.Helpers
 			CreateMap<CustomerBasketDTO, CustomerBasket>();
 
 			CreateMap<BasketItemDTO, BasketItem>();
+
+			CreateMap<AddressDTO, eCart.API.Data.Models.OrderAggregate.Address>();
         }
     }
 }

@@ -2,6 +2,7 @@
 using eCart.API.Data.Errors;
 using eCart.API.Data.Services.Basket;
 using eCart.API.Data.Services.Identity;
+using eCart.API.Data.Services.OrderService;
 using eCart.API.Services;
 using eCart.API.Services.ProductService;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +29,8 @@ namespace eCart.API.Data.Extensions
                 return ConnectionMultiplexer.Connect(options);
             });
             services.AddScoped<IBasketRepository, BasketRepository>();
+
+            services.AddScoped<IOrderService, OrderService>();
 
             services.AddScoped<ITokenService, TokenService>();
 
