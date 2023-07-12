@@ -10,12 +10,14 @@ using eCart.API.Data.Errors;
 using eCart.API.Data.Extensions;
 using eCart.API.Data.Models.OrderAggregate;
 using eCart.API.Data.Services.OrderService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace eCart.API.Controllers
 {
+    [Authorize]
     public class OrdersController : BaseApiController
     {
         private readonly IOrderService _orderService;
