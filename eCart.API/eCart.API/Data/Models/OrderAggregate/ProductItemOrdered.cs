@@ -21,4 +21,3 @@ namespace eCart.API.Data.Models.OrderAggregate
 		public string PictureUrl { get; set; }
 	}
 }
-

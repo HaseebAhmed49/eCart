@@ -108,7 +108,7 @@ namespace eCart.API.Controllers
         [HttpGet("address")]
         public async Task<ActionResult<AddressDTO>> GetUserAddress()
         {
-            var user = await _userManager.FindByEmailFromClaimPrincipal(User);
+            var user = await _userManager.FindUserByClaimsPrincipalWithAddress(User);
             return _mapper.Map<Address, AddressDTO>(user.Address);
         }
 
