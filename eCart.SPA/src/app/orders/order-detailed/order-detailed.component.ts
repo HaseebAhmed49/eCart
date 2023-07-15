@@ -32,7 +32,7 @@ export class OrderDetailedComponent implements OnInit{
       {
         this.order = order,
         // Will show the name in the breadcrumb
-        this.bcService.set('@orderDetails',order.id.toString());
+        this.bcService.set('@orderDetails', 'Order# ' + order.id + ' - ' + order.status);
       },
       error: error => console.log(error)
     })
