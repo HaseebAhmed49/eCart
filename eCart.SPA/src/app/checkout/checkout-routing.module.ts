@@ -7,7 +7,6 @@ import { CheckoutSuccessComponent } from './checkout-success/checkout-success.co
 const routes: Routes = [
   {path: '', component: CheckoutComponent},
   {path: 'success', component: CheckoutSuccessComponent},
-
 ]
 
 @NgModule({

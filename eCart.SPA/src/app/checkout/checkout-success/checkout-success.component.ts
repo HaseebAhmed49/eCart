@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout-success',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class CheckoutSuccessComponent {
 
+  constructor(private router: Router){}
+
+  ViewOrder(){
+    this.router.navigate(['orders']);
+  }
 }

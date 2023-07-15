@@ -29,7 +29,6 @@ export class ShopService {
   }
 
   getProduct(id: number){
-    console.log('into service');
     return this.http.get<Product>(this.baseUrl + 'products/' + id);
   }
 
