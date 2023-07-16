@@ -12,6 +12,7 @@ using eCart.API.Data.Services.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -34,6 +35,8 @@ namespace eCart.API.Controllers
             _tokenService = tokenService;
             _mapper = mapper;
         }
+
+      
 
         [Authorize]
         [HttpGet]
@@ -125,6 +128,27 @@ namespace eCart.API.Controllers
             if (result.Succeeded) return Ok(_mapper.Map<Address, AddressDTO>(user.Address));
 
             return BadRequest("Problem updating the user");
+        }
+
+        [Authorize]
+        [HttpGet("GetAllUsers")]
+        public async Task<ActionResult<List<UserDTO>>> GetAllUsers()
+        {
+            List<UserDTO> users = new List<UserDTO>();
+
+            var data = await _userManager.Users.ToListAsync();
+
+            foreach (var user in _userManager.Users.ToList())
+            {
+                UserDTO temp = new UserDTO
+                {
+                    DisplayName = user.DisplayName,
+                    Email = user.Email,
+                };
+
+                users.Add(temp);
+            }
+            return Ok(users);
         }
     }
 }
