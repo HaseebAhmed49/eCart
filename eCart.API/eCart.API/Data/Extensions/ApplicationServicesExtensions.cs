@@ -3,6 +3,7 @@ using eCart.API.Data.Errors;
 using eCart.API.Data.Services.Basket;
 using eCart.API.Data.Services.Identity;
 using eCart.API.Data.Services.OrderService;
+using eCart.API.Data.Services.PaymentService;
 using eCart.API.Data.Services.UoW;
 using eCart.API.Services;
 using eCart.API.Services.ProductService;
@@ -37,6 +38,8 @@ namespace eCart.API.Data.Extensions
             services.AddScoped<IOrderService, OrderService>();
 
             services.AddScoped<ITokenService, TokenService>();
+
+            services.AddScoped<IPaymentService, PaymentService>();
 
             // Product Related Services DI
             services.AddScoped<IProductService, ProductService>();
