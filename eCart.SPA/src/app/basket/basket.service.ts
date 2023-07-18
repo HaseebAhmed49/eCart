@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Basket, BasketItem, BasketTotals } from '../shared/models/basket';
 import { Product } from '../shared/models/products';
@@ -18,13 +18,28 @@ export class BasketService {
 
   private basketTotalSource = new BehaviorSubject<BasketTotals | null>(null);
   basketTotalSource$ = this.basketTotalSource.asObservable();
-  shipping = 0;
 
   constructor(private http: HttpClient) { }
 
+  createPaymentIntent(){
+    return this.http.post<Basket>(this.baseUrl + 'payments/' + this.getCurrentBasketValue()?.id , {})
+      .pipe(
+        map((basket) => {
+          this.basketSource.next(basket);
+        })
+      )
+  }
+
   setShippingPrice(deliveryMethod: DeliveryMethod){
-    this.shipping = deliveryMethod.price;
-    this.calculateTotals();
+    const basket = this.getCurrentBasketValue();
+    if(basket){
+      console.log('1 ' + deliveryMethod.price);
+      
+      basket.shippingPrice = deliveryMethod.price;
+            basket.deliveryMethodId = deliveryMethod.id;
+            console.log('2 ' + basket.shippingPrice);
+            this.setBasket(basket);
+    }
   }
 
   getBasket(id: string){
@@ -117,10 +132,13 @@ export class BasketService {
     // Calculate the totals of the basket
     const basket = this.getCurrentBasketValue();
     if(!basket) return;
+    console.log('3 ' + basket.shippingPrice);
+    
     // a is previous value, b is current value
     const subTotal = basket.items.reduce((a, b) => (b.price * b.quantity) + a,0);
-    const total = subTotal + this.shipping;
-    this.basketTotalSource.next({shipping: this.shipping, total, subTotal});
+    const total = subTotal + basket.shippingPrice;
+    console.log('4 ' + basket.shippingPrice);
+    this.basketTotalSource.next({shipping: basket.shippingPrice, total, subTotal});
   }
 
   // Type Guard

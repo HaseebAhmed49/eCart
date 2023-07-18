@@ -24,6 +24,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.32.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.9" />
+    <PackageReference Include="Stripe.net" Version="41.24.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,6 +51,7 @@
     <None Remove="Data\Services\Order\" />
     <None Remove="Data\DTOs\Order\" />
     <None Remove="Data\Services\UoW\" />
+    <None Remove="Data\Services\PaymentService\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -74,6 +76,7 @@
     <Folder Include="Data\Services\OrderService\" />
     <Folder Include="Data\DTOs\Order\" />
     <Folder Include="Data\Services\UoW\" />
+    <Folder Include="Data\Services\PaymentService\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
