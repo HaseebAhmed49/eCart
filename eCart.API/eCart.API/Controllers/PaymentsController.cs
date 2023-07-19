@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using eCart.API.Data.Errors;
 using eCart.API.Data.Models;
 using eCart.API.Data.Services.PaymentService;
 using Microsoft.AspNetCore.Authorization;
@@ -24,7 +25,10 @@ namespace eCart.API.Controllers
         [HttpPost("{basketId}")]
         public async Task<ActionResult<CustomerBasket>> CreateOrUpdatePaymentIntent(string basketId)
         {
-            return await _paymentService.CreateOrUpdatePaymentIntent(basketId);
+            var basket = await _paymentService.CreateOrUpdatePaymentIntent(basketId);
+            if (basket == null) return BadRequest(new ApiResponse(400, "Problem with your basket"));
+
+            return basket;
         }
 
     }
