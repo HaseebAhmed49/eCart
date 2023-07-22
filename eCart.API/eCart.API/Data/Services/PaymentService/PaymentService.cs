@@ -3,6 +3,7 @@ using eCart.API.Data.Models;
 using eCart.API.Data.Models.OrderAggregate;
 using eCart.API.Data.Services.Basket;
 using eCart.API.Data.Services.UoW;
+using eCart.API.Data.Specifications;
 using Stripe;
 using Product = eCart.API.Models.Product;
 
@@ -74,8 +75,27 @@ namespace eCart.API.Data.Services.PaymentService
                 await service.UpdateAsync(basket.PaymentIntentId, options);
             }
             await _basketRepository.UpdateBasketAsync(basket);
-
             return basket;
+        }
+
+        public async Task<Order> UpdateOrderPaymentFailed(string paymentIntentId)
+        {
+            var spec = new OrderByPaymentIntentIdSpecification(paymentIntentId);
+            var order = await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
+            if (order == null) return null;
+            order.Status = OrderStatus.PaymentFailed;
+            await _unitOfWork.Complete();
+            return order;
+        }
+
+        public async Task<Order> UpdateOrderPaymentSucceeded(string paymentIntentId)
+        {
+            var spec = new OrderByPaymentIntentIdSpecification(paymentIntentId);
+            var order = await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
+            if (order == null) return null;
+            order.Status = OrderStatus.PaymentReceived;
+            await _unitOfWork.Complete();
+            return order;
         }
     }
 }
