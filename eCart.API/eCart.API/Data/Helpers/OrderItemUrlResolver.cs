@@ -24,7 +24,6 @@ namespace eCart.API.Data.Helpers
             {
                 return _config["ApiUrl"] + source.ItemOrdered.PictureUrl;
             }
-
             return null;
         }
     }

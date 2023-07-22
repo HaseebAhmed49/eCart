@@ -32,15 +32,10 @@ namespace eCart.API.Data.Extensions
             });
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
             services.AddScoped<IBasketRepository, BasketRepository>();
-
             services.AddScoped<IOrderService, OrderService>();
-
             services.AddScoped<ITokenService, TokenService>();
-
             services.AddScoped<IPaymentService, PaymentService>();
-
             // Product Related Services DI
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

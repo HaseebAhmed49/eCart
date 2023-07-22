@@ -19,8 +19,7 @@ namespace eCart.API.Controllers
         private const string WhSecret = "whsec_ff432c6c86e83f1351f12e85c796f807c75b5c1c18c0e5a60d55fa8c1554d980";
 
         private readonly IPaymentService _paymentService;
-
-        private ILogger<PaymentsController> _logger;
+        private readonly ILogger<PaymentsController> _logger;
 
         public PaymentsController(IPaymentService paymentService, ILogger<PaymentsController> logger)
         {
@@ -34,7 +33,6 @@ namespace eCart.API.Controllers
         {
             var basket = await _paymentService.CreateOrUpdatePaymentIntent(basketId);
             if (basket == null) return BadRequest(new ApiResponse(400, "Problem with your basket"));
-
             return basket;
         }
 
@@ -68,4 +66,3 @@ namespace eCart.API.Controllers
         }
     }
 }
-

@@ -43,16 +43,12 @@ namespace eCart.API.Controllers
         {
             // Generate Specs
             var spec = new ProductsWithTypesAndBrandsSpecification(specParams);
-
             // Count Spec
             var countSpec = new ProductWithFiltersForCountSpecification(specParams);
-
             // Total Items
             var totalItems = await _productRepo.CountAsync(countSpec);
-
             // Total Products
             var products = await _productRepo.ListAsync(spec);
-
             // Mapping data using Auto Mapper
             var data = _mapper
                 .Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDTO>>(products);
@@ -68,8 +64,6 @@ namespace eCart.API.Controllers
             ////Working Code
             //var spec = new ProductsWithTypesAndBrandsSpecification();
             //return await _productRepo.GetEntityWithSpec(spec);
-
-
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
             var product = await _productRepo.GetEntityWithSpec(spec);
             if (product == null) return NotFound(new ApiResponse(404));

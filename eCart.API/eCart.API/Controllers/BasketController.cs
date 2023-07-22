@@ -15,7 +15,6 @@ namespace eCart.API.Controllers
     public class BasketController : BaseApiController
     {
         private readonly IBasketRepository _basketRepository;
-
         private readonly IMapper _mapper;
 
         public BasketController(IBasketRepository basketRepository, IMapper mapper)
@@ -35,7 +34,6 @@ namespace eCart.API.Controllers
         public async Task<ActionResult<CustomerBasket>> UpdateBasket(CustomerBasketDTO basket)
         {
             var customerBasket = _mapper.Map<CustomerBasketDTO, CustomerBasket>(basket);
-
             var updatedBasket = await _basketRepository.UpdateBasketAsync(customerBasket);
             return Ok(updatedBasket);
         }

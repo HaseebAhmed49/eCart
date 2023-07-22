@@ -21,11 +21,8 @@ namespace eCart.API.Controllers
     public class AccountController : BaseApiController
     {
         private readonly UserManager<AppUser> _userManager;
-
         private readonly SignInManager<AppUser> _signInManager;
-
         private readonly ITokenService _tokenService;
-
         private readonly IMapper _mapper;
 
         public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IMapper mapper)
@@ -35,8 +32,6 @@ namespace eCart.API.Controllers
             _tokenService = tokenService;
             _mapper = mapper;
         }
-
-      
 
         [Authorize]
         [HttpGet]
@@ -53,7 +48,6 @@ namespace eCart.API.Controllers
             };
         }
 
-
         [HttpGet("email")]
         public async Task<ActionResult<bool>> CheckEmailExistsAsync([FromQuery] string email)
         {
@@ -65,11 +59,8 @@ namespace eCart.API.Controllers
         {
             var user = await _userManager.FindByEmailAsync(loginDTO.Email);
             if (user == null) return Unauthorized(new ApiResponse(401));
-
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDTO.Password, false);
-
             if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
-
             return new UserDTO
             {
                 Email = user.Email,
@@ -95,9 +86,7 @@ namespace eCart.API.Controllers
             };
 
             var result = await _userManager.CreateAsync(user, registerDTO.Password);
-
             if (!result.Succeeded) return BadRequest(new ApiResponse(400));
-
             return new UserDTO
             {
                 Email = user.Email,
@@ -120,13 +109,9 @@ namespace eCart.API.Controllers
         public async Task<ActionResult<AddressDTO>> UpdateUserAddress(AddressDTO address)
         {
             var user = await _userManager.FindUserByClaimsPrincipalWithAddress(HttpContext.User);
-
             user.Address = _mapper.Map<AddressDTO, Address>(address);
-
             var result = await _userManager.UpdateAsync(user);
-
             if (result.Succeeded) return Ok(_mapper.Map<Address, AddressDTO>(user.Address));
-
             return BadRequest("Problem updating the user");
         }
 
@@ -135,9 +120,7 @@ namespace eCart.API.Controllers
         public async Task<ActionResult<List<UserDTO>>> GetAllUsers()
         {
             List<UserDTO> users = new List<UserDTO>();
-
             var data = await _userManager.Users.ToListAsync();
-
             foreach (var user in _userManager.Users.ToList())
             {
                 UserDTO temp = new UserDTO
@@ -145,7 +128,6 @@ namespace eCart.API.Controllers
                     DisplayName = user.DisplayName,
                     Email = user.Email,
                 };
-
                 users.Add(temp);
             }
             return Ok(users);

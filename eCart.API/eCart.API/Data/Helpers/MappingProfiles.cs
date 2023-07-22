@@ -21,18 +21,12 @@ namespace eCart.API.Data.Helpers
                 .ForMember(d => d.PictureUrl, o => o.MapFrom<ProductUrlResolver>());
 
             CreateMap<eCart.API.Data.Models.Identity.Address, AddressDTO>().ReverseMap();
-
             CreateMap<CustomerBasketDTO, CustomerBasket>();
-
             CreateMap<BasketItemDTO, BasketItem>();
-
             CreateMap<AddressDTO, eCart.API.Data.Models.OrderAggregate.Address>();
-
             CreateMap<Order, OrderToReturnDTO>()
                 .ForMember(d => d.DeliveryMethod, o => o.MapFrom(s => s.DeliveryMethod.ShortName))
                 .ForMember(d => d.ShippingPrice, o => o.MapFrom(s => s.DeliveryMethod.Price));
-
-
             CreateMap<OrderItem, OrderItemDTO>()
                 .ForMember(d => d.ProductId, o => o.MapFrom(s => s.ItemOrdered.ProductItemId))
                 .ForMember(d => d.ProductName, o => o.MapFrom(s => s.ItemOrdered.ProductName))
