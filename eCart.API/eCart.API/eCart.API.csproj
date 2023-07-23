@@ -52,6 +52,7 @@
     <None Remove="Data\DTOs\Order\" />
     <None Remove="Data\Services\UoW\" />
     <None Remove="Data\Services\PaymentService\" />
+    <None Remove="Data\Services\Caching\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -77,6 +78,7 @@
     <Folder Include="Data\DTOs\Order\" />
     <Folder Include="Data\Services\UoW\" />
     <Folder Include="Data\Services\PaymentService\" />
+    <Folder Include="Data\Services\Caching\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

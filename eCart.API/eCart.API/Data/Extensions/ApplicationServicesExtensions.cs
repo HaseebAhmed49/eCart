@@ -1,6 +1,7 @@
 ﻿using System;
 using eCart.API.Data.Errors;
 using eCart.API.Data.Services.Basket;
+using eCart.API.Data.Services.Caching;
 using eCart.API.Data.Services.Identity;
 using eCart.API.Data.Services.OrderService;
 using eCart.API.Data.Services.PaymentService;
@@ -36,6 +37,9 @@ namespace eCart.API.Data.Extensions
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IPaymentService, PaymentService>();
+
+            // Singleton for Caching
+            services.AddSingleton<IResponseCacheService, ResponseCacheService>();
             // Product Related Services DI
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
