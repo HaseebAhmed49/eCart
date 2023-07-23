@@ -37,6 +37,8 @@ namespace eCart.API.Controllers
             _mapper = mapper;
         }
 
+        // 600 is time to Live in sec
+        [Cached(600)]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDTO>>> GetProducts(
             [FromQuery] ProductSpecParams specParams)
@@ -56,6 +58,7 @@ namespace eCart.API.Controllers
             return Ok(new Pagination<ProductToReturnDTO>(specParams.PageIndex, specParams.PageSize, totalItems, data));
         }
 
+        [Cached(600)]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -70,6 +73,7 @@ namespace eCart.API.Controllers
             return _mapper.Map<Product, ProductToReturnDTO>(product);
         }
 
+        [Cached(600)]
         [HttpGet("brands")]
         public async Task<ActionResult<List<ProductBrand>>> GetProductBrands()
         {
@@ -77,6 +81,7 @@ namespace eCart.API.Controllers
             return Ok(productBrands);
         }
 
+        [Cached(600)]
         [HttpGet("types")]
         public async Task<ActionResult<List<ProductType>>> GetProductTypes()
         {
