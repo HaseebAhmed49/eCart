@@ -92,7 +92,6 @@ export class CheckoutPaymentComponent implements OnInit{
           this.toastr.error(paymentResult.error.message);
         }
       } catch (error: any) {
-        console.log(error);
         this.toastr.error(error.message);        
       } finally {
         this.loading = false;
@@ -117,7 +116,7 @@ export class CheckoutPaymentComponent implements OnInit{
 
   private async createOrder(basket: Basket | null) {
     if(!basket) throw new Error('Basket is null');
-    const orderToCreate = this.getOrderToCreate(basket);
+    const orderToCreate = this.getOrderToCreate(basket);    
     return firstValueFrom(this.checkoutService.createOrder(orderToCreate));
 
   }

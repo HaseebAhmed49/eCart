@@ -32,7 +32,6 @@ export class ShopComponent implements OnInit{
     this.getProducts();
     this.getBrands();
     this.getTypes();
-    console.log(this.types);
   }
 
   getProducts(){

@@ -32,12 +32,9 @@ export class BasketService {
 
   setShippingPrice(deliveryMethod: DeliveryMethod){
     const basket = this.getCurrentBasketValue();
-    if(basket){
-      console.log('1 ' + deliveryMethod.price);
-      
+    if(basket){      
       basket.shippingPrice = deliveryMethod.price;
             basket.deliveryMethodId = deliveryMethod.id;
-            console.log('2 ' + basket.shippingPrice);
             this.setBasket(basket);
     }
   }
@@ -66,7 +63,6 @@ export class BasketService {
 
   addItemToBasket(item: Product | BasketItem, quantity = 1){
     if(this.isProduct(item)) item = this.mapProductItemToBasketItem(item);
-    console.log(item);    
     const basket = this.getCurrentBasketValue() ?? this.createBasket();
     basket.items = this.addOrUpdateItem(basket.items, item, quantity);
     this.setBasket(basket);
@@ -132,12 +128,10 @@ export class BasketService {
     // Calculate the totals of the basket
     const basket = this.getCurrentBasketValue();
     if(!basket) return;
-    console.log('3 ' + basket.shippingPrice);
     
     // a is previous value, b is current value
     const subTotal = basket.items.reduce((a, b) => (b.price * b.quantity) + a,0);
     const total = subTotal + basket.shippingPrice;
-    console.log('4 ' + basket.shippingPrice);
     this.basketTotalSource.next({shipping: basket.shippingPrice, total, subTotal});
   }
 
