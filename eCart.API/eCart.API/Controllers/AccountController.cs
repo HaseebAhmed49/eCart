@@ -96,7 +96,7 @@ namespace eCart.API.Controllers
 
             var encodedEmailToken = Encoding.UTF8.GetBytes(confirmEmailToken);
             var validEmailToken = WebEncoders.Base64UrlEncode(encodedEmailToken);
-            string url = $"https://localhost:7146/api/Accounts/confirmemail?userid={user.Id}&token={validEmailToken}";
+            string url = $"https://localhost:7167/api/Account/confirmemail?userid={user.Id}&token={validEmailToken}";
 
             await _mailService.SendEmailAsync(user.Email, "Confirm your email", "<h1>Welcome to E-Commerce Application</h1>" +
                 $"<p>Please confirm your email by <a href='{url}'>Clicking here</a></p>", "E-Commerce Application Registration Email");
@@ -109,6 +109,32 @@ namespace eCart.API.Controllers
                 Token = _tokenService.CreateToken(user),
                 DisplayName = user.DisplayName
             };
+        }
+
+        // /api/auth/confirmemail?userid&token
+        [HttpGet("ConfirmEmail")]
+        public async Task<IActionResult> ConfirmEmailAddress(string userId, string token)
+        {
+            if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(token))
+                return NotFound();
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return BadRequest("User Not Found");
+            }
+
+            var decodedToken = WebEncoders.Base64UrlDecode(token);
+            string normalToken = Encoding.UTF8.GetString(decodedToken);
+
+            var result = await _userManager.ConfirmEmailAsync(user, normalToken);
+            if (result.Succeeded)
+            {
+                user.EmailConfirmed = true;
+                await _userManager.UpdateAsync(user);
+                return Ok(user);
+            }
+            return BadRequest(result);
         }
 
         [Authorize]
