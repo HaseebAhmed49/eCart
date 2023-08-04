@@ -64,15 +64,42 @@ namespace eCart.API.Controllers
         {
             var user = await _userManager.FindByEmailAsync(loginDTO.Email);
             if (user == null) return Unauthorized(new ApiResponse(401));
-            var result = await _signInManager.CheckPasswordSignInAsync(user, loginDTO.Password, false);
-            if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
-            return new UserDTO
+
+            if(user!=null && user.EmailConfirmed == true)
             {
-                Email = user.Email,
-                // JSON Web Token
-                Token = _tokenService.CreateToken(user),
-                DisplayName = user.DisplayName
-            };
+                var result = await _signInManager.CheckPasswordSignInAsync(user, loginDTO.Password, false);
+                if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
+
+                if (result.Succeeded)
+                {
+                    await _mailService.SendEmailAsync(loginDTO.Email, "New Login", "<h1> Hey! new Login to your account notified</h1><p>New Login to your account at " + DateTime.Now + "</p>", "Login into E-Commerce Application");
+
+                    // returning 200 Response Code with following data Username, email and JSON Token.
+                    return new UserDTO
+                    {
+                        Email = user.Email,
+                        // JSON Web Token
+                        Token = _tokenService.CreateToken(user),
+                        DisplayName = user.DisplayName
+                    };
+                }
+            }
+            // Using Microsoft Identity User Manager will check either the user exists with the passed email address.           
+            else if (user != null && user.EmailConfirmed == false)
+            {
+                var confirmEmailToken = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+                var encodedEmailToken = Encoding.UTF8.GetBytes(confirmEmailToken);
+                var validEmailToken = WebEncoders.Base64UrlEncode(encodedEmailToken);
+                string url = $"https://localhost:7167/api/Account/confirmemail?userid={user.Id}&token={validEmailToken}";
+
+                await _mailService.SendEmailAsync(user.Email, "Confirm your email", "<h1>Welcome to E-Commerce Application</h1>" +
+                    $"<p>Please confirm your email by <a href='{url}'>Clicking here</a></p>", "E-Commerce Application Registration Email");
+
+                // Forbidden
+                return StatusCode(403);
+            }
+            return Unauthorized(new ApiResponse(401));
         }
 
         [HttpPost("register")]
