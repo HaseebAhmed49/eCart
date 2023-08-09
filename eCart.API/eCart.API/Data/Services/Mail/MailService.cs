@@ -26,11 +26,11 @@ namespace eCart.API.Data.Services.Mail
             string senderName = "John Doe";
             string senderEmail = "example@example.com";
             string templateName = "Example Template";
-            string htmlContent = "<html><body><h1>This is my first transactional email</h1></body></html>";
+            string htmlContent = content;
             string htmlUrl = null;
-            string subject = "New Subject";
-            string replyTo = "replyto@domain.com";
-            string toField = "example@example.com";
+            string subject = subject;
+            //string replyTo = "replyto@domain.com";
+            string toField = toEmail;
             bool? isActive = true;
             string attachmentUrl = "https://example.net/upload-file";
             CreateSmtpTemplateSender sender = new CreateSmtpTemplateSender(senderName, senderEmail);
