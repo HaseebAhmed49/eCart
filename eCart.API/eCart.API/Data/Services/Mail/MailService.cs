@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Diagnostics;
 using System.Net.Mail;
 
@@ -19,17 +20,24 @@ namespace eCart.API.Data.Services.Mail
 
         public Task SendEmailAsyncBrevo(string toEmail, string subject, string content, string Name)
         {
-            Configuration.Default.ApiKey.Add("api-key", "YOUR API KEY");
-
+            // Api Instance
             var apiInstance = new TransactionalEmailsApi();
             string tag = null;
-            string senderName = "John Doe";
-            string senderEmail = "example@example.com";
+            string senderName = "Haseeb Ahmed";
+
+            // Sender Details
+            string senderEmail = "haseebahmed02@gmail.com";
             string templateName = "Example Template";
+
+            // Html Content
             string htmlContent = content;
             string htmlUrl = null;
+
+            // Subject
             string subject = subject;
             //string replyTo = "replyto@domain.com";
+
+            // ToEmail
             string toField = toEmail;
             bool? isActive = true;
             string attachmentUrl = "https://example.net/upload-file";
