@@ -54,7 +54,6 @@ namespace eCart.API.Controllers
             // Mapping data using Auto Mapper
             var data = _mapper
                 .Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDTO>>(products);
-
             return Ok(new Pagination<ProductToReturnDTO>(specParams.PageIndex, specParams.PageSize, totalItems, data));
         }
 
