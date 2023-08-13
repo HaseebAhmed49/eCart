@@ -38,8 +38,7 @@ namespace eCart.API.Data.Services.Mail
             #region SMTP Template
             //// Api Instance
             //var apiInstance = new TransactionalEmailsApi();
-            ////var apiKey = "xsmtpsib-72be2427115819843f299974f0fd0e622c8cb04a7be3c1c2614bc6ffa433597b-3KXE7YkQNfyg1OBd";
-            //var apiKey = "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";
+            //var apiKey = _config["SendInBlue:api-key"];
             //apiInstance.Configuration.AddApiKey("api-key", apiKey);
             //string tag = null;
             //string senderName = "Powersoft19 Pvt Ltd";
