@@ -1,5 +1,6 @@
 ﻿using System;
 using eCart.API.Data.Errors;
+using eCart.API.Data.Models.Identity;
 using eCart.API.Data.Services.Basket;
 using eCart.API.Data.Services.Caching;
 using eCart.API.Data.Services.Identity;
@@ -9,6 +10,7 @@ using eCart.API.Data.Services.PaymentService;
 using eCart.API.Data.Services.UoW;
 using eCart.API.Services;
 using eCart.API.Services.ProductService;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -39,7 +41,6 @@ namespace eCart.API.Data.Extensions
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddTransient<IMailService, MailService>();
-
 
             // Singleton for Caching
             services.AddSingleton<IResponseCacheService, ResponseCacheService>();

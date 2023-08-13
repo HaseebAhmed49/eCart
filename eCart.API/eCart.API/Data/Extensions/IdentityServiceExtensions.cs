@@ -23,7 +23,8 @@ namespace eCart.API.Data.Extensions
 			{
 				// Add Identity Options here
 			}).AddEntityFrameworkStores<AppIdentityDbContext>()
-			.AddSignInManager<SignInManager<AppUser>>();
+			.AddSignInManager<SignInManager<AppUser>>()
+			.AddDefaultTokenProviders();
 
 			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 				.AddJwtBearer(options =>

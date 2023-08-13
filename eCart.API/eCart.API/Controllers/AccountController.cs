@@ -72,7 +72,7 @@ namespace eCart.API.Controllers
 
                 if (result.Succeeded)
                 {
-                    await _mailService.SendEmailAsync(loginDTO.Email, "New Login", "<h1> Hey! new Login to your account notified</h1><p>New Login to your account at " + DateTime.Now + "</p>", "Login into E-Commerce Application");
+                    await _mailService.SendEmailAsyncBrevo(loginDTO.Email, user.DisplayName, "New Login", "<h1> Hey! new Login to your account notified</h1><p>New Login to your account at " + DateTime.Now + "</p>", "Login into E-Commerce Application");
 
                     // returning 200 Response Code with following data Username, email and JSON Token.
                     return new UserDTO
@@ -93,7 +93,7 @@ namespace eCart.API.Controllers
                 var validEmailToken = WebEncoders.Base64UrlEncode(encodedEmailToken);
                 string url = $"https://localhost:7167/api/Account/confirmemail?userid={user.Id}&token={validEmailToken}";
 
-                await _mailService.SendEmailAsync(user.Email, "Confirm your email", "<h1>Welcome to E-Commerce Application</h1>" +
+                await _mailService.SendEmailAsyncBrevo(user.Email, user.DisplayName, "Confirm your email", "<h1>Welcome to E-Commerce Application</h1>" +
                     $"<p>Please confirm your email by <a href='{url}'>Clicking here</a></p>", "E-Commerce Application Registration Email");
 
                 // Forbidden
@@ -125,7 +125,7 @@ namespace eCart.API.Controllers
             var validEmailToken = WebEncoders.Base64UrlEncode(encodedEmailToken);
             string url = $"https://localhost:7167/api/Account/confirmemail?userid={user.Id}&token={validEmailToken}";
 
-            await _mailService.SendEmailAsync(user.Email, "Confirm your email", "<h1>Welcome to E-Commerce Application</h1>" +
+            await _mailService.SendEmailAsyncBrevo(user.Email, user.DisplayName, "Confirm your email", "<h1>Welcome to E-Commerce Application</h1>" +
                 $"<p>Please confirm your email by <a href='{url}'>Clicking here</a></p>", "E-Commerce Application Registration Email");
 
             if (!result.Succeeded) return BadRequest(new ApiResponse(400));
