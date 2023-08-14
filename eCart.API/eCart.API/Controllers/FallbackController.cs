@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eCart.API.Controllers
 {
-    [Route("api/[controller]")]
     public class FallbackController : Controller
     {
         public IActionResult Index()

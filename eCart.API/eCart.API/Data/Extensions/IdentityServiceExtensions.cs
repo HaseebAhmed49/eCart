@@ -14,12 +14,20 @@ namespace eCart.API.Data.Extensions
 		public static IServiceCollection AddIdentityServices(this IServiceCollection services,
 			IConfiguration config)
 		{
-			services.AddDbContext<AppIdentityDbContext>(opt =>
-			{
-				opt.UseSqlite(config.GetConnectionString("IdentityConnection"));
-			});
+			// SQLLite
+			//services.AddDbContext<AppIdentityDbContext>(opt =>
+			//{
+			//	opt.UseSqlite(config.GetConnectionString("IdentityConnection"));
+			//});
 
-			services.AddIdentityCore<AppUser>(opt =>
+			// PostGres
+            services.AddDbContext<AppIdentityDbContext>(opt =>
+            {
+                opt.UseNpgsql(config.GetConnectionString("IdentityConnection"));
+            });
+
+
+            services.AddIdentityCore<AppUser>(opt =>
 			{
 				// Add Identity Options here
 			}).AddEntityFrameworkStores<AppIdentityDbContext>()

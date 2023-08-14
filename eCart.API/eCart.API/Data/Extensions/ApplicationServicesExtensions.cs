@@ -22,11 +22,18 @@ namespace eCart.API.Data.Extensions
 	{
 		public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
 		{
+            // SQLLite
+            //services.AddDbContext<StoreContext>(opt =>
+            //{
+            //    opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+            //});
 
+            // PostGres
             services.AddDbContext<StoreContext>(opt =>
             {
-                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                opt.UseNpgsql(config.GetConnectionString("DefaultConnection"));
             });
+
 
             // Redis for Basket
             services.AddSingleton<IConnectionMultiplexer>(c =>

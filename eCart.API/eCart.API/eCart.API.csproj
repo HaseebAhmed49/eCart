@@ -28,6 +28,7 @@
     <PackageReference Include="SendWithBrevo" Version="1.0.0" />
     <PackageReference Include="sib_api_v3_sdk" Version="4.0.2" />
     <PackageReference Include="SendGrid" Version="9.28.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -106,10 +107,6 @@
     <Folder Include="Data\Services\Mail\" />
     <Folder Include="Data\Content\" />
     <Folder Include="Data\Content\images\" />
-    <Folder Include="wwwroot\images\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="wwwroot\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Content\images\.DS_Store">
