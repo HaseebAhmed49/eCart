@@ -88,7 +88,6 @@
     <Folder Include="Data\Services\" />
     <Folder Include="Data\DTOs\" />
     <Folder Include="Data\Helpers\" />
-    <Folder Include="wwwroot\" />
     <Folder Include="Data\Errors\" />
     <Folder Include="Data\Middleware\" />
     <Folder Include="Data\Extensions\" />
@@ -107,9 +106,10 @@
     <Folder Include="Data\Services\Mail\" />
     <Folder Include="Data\Content\" />
     <Folder Include="Data\Content\images\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Content\images\.DS_Store">
