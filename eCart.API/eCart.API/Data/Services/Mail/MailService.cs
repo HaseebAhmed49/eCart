@@ -127,5 +127,21 @@ namespace eCart.API.Data.Services.Mail
             var sendSmtpEmail = new SendSmtpEmail(Email, To, null, null, HtmlContent, TextContent, Subject, ReplyTo, null, null, null, null, messageVersiopns, null);
             CreateSmtpEmail result = await apiInstance.SendTransacEmailAsync(sendSmtpEmail);
         }
+
+        public async Task SendSMSAsyncBrevo(string recipientNumber, string senderName, string message)
+        {
+            var apiInstance = new TransactionalSMSApi();
+            var apiKey = _config["SendInBlue:api-key"];
+            apiInstance.Configuration.AddApiKey("api-key", apiKey);
+
+            string sender = "Haseeb";
+            string recipient = recipientNumber;
+            string content = message;
+            SendTransacSms.TypeEnum type = SendTransacSms.TypeEnum.Transactional;
+            string tag = "testTag";
+            string webUrl = null;
+            var sendTransacSms = new SendTransacSms(sender, recipient, content, type, tag, webUrl);
+            SendSms result = await apiInstance.SendTransacSmsAsync(sendTransacSms);
+        }
     }
 }
