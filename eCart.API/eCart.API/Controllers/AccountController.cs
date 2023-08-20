@@ -74,6 +74,8 @@ namespace eCart.API.Controllers
                 {
                     await _mailService.SendEmailAsyncBrevo(loginDTO.Email, user.DisplayName, "New Login", "<h1> Hey! new Login to your account notified</h1><p>New Login to your account at " + DateTime.Now + "</p>", "Login into E-Commerce Application");
 
+                    //await _mailService.SendSMSAsyncBrevo("+923338437949", user.DisplayName, "Login into eCart Solution at " + DateTime.Now);
+
                     // returning 200 Response Code with following data Username, email and JSON Token.
                     return new UserDTO
                     {
