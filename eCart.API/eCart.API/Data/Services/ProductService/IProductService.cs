@@ -16,7 +16,5 @@ namespace eCart.API.Services.ProductService
         public Task<IReadOnlyList<ProductType>> GetProductTypesAsync();
 
         public Task<Product> GetProductByIdAsync(int id);
-
-		public Task<IReadOnlyList<Product>> ExportProducts();
 	}
 }
