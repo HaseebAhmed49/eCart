@@ -5,6 +5,7 @@ import { Product } from '../shared/models/products';
 import { ShopParams } from '../shared/models/shopParams';
 import { Types } from '../shared/models/type';
 import { ShopService } from './shop.service';
+import { ExcelService } from '../core/export/excel.service';
 
 @Component({
   selector: 'app-shop',
@@ -24,7 +25,7 @@ export class ShopComponent implements OnInit{
   ];
   totalCount = 0;
 
-  constructor(private shopService: ShopService){
+  constructor(private shopService: ShopService, private excelService: ExcelService){
     this.shopParams = shopService.getShopParams();
   }
 
@@ -32,6 +33,11 @@ export class ShopComponent implements OnInit{
     this.getProducts();
     this.getBrands();
     this.getTypes();
+  }
+
+  exportData() {
+
+    this.excelService.exportToExcel(this.products, 'data.xlsx', 'Sheet1');
   }
 
   getProducts(){
