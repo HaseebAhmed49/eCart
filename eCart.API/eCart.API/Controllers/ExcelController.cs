@@ -1,47 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using eCart.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace eCart.API.Controllers
 {
-    [Route("api/[controller]")]
-    public class ExcelController : Controller
+    [Authorize]
+    public class ExcelController : BaseApiController
     {
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpPost("export")]
+        public IActionResult ExportToExcel([FromBody] List<Product> data)
         {
-            return new string[] { "value1", "value2" };
-        }
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Sheet1");
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+                worksheet.Cells.LoadFromCollection(data, true);
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
+                var stream = new MemoryStream(package.GetAsByteArray());
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+                return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "data.xlsx");
+            }
         }
     }
 }
-
