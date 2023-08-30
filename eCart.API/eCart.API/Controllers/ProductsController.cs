@@ -39,6 +39,26 @@ namespace eCart.API.Controllers
 
         // 600 is time to Live in sec
         [Cached(600)]
+        [HttpGet("get-products-without-pagination")]
+        public async Task<ActionResult<Pagination<ProductToReturnDTO>>> GetProductswithoutPagination(
+            [FromQuery] ProductSpecParams specParams)
+        {
+            // Generate Specs
+            var spec = new ProductsWithTypesAndBrandsSpecification(specParams);
+            // Count Spec
+            var countSpec = new ProductWithFiltersForCountSpecification(specParams);
+            // Total Items
+            var totalItems = await _productRepo.CountAsync(countSpec);
+            // Total Products
+            var products = await _productRepo.ListAsync(spec);
+            // Mapping data using Auto Mapper
+            var data = _mapper
+                .Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDTO>>(products);
+            return Ok(data);
+        }
+
+        // 600 is time to Live in sec
+        [Cached(600)]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDTO>>> GetProducts(
             [FromQuery] ProductSpecParams specParams)
