@@ -23,12 +23,14 @@ namespace eCart.API.Controllers
 {
     public class AccountController : BaseApiController
     {
+        // Dependency Injection Services
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITokenService _tokenService;
         private readonly IMailService _mailService;
         private readonly IMapper _mapper;
 
+        // Constructor AccountController
         public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IMailService mailService, IMapper mapper)
         {
             _userManager = userManager;
@@ -38,12 +40,14 @@ namespace eCart.API.Controllers
             _mapper = mapper;
         }
 
+        // Get Current User EndPoint Only Accessible to Authorized Members
         [Authorize]
         [HttpGet]
         public async Task<ActionResult<UserDTO>> GetCurrentUser()
         {
             var user = await _userManager.FindByEmailFromClaimPrincipal(User);
 
+            // return UserDTO
             return new UserDTO
             {
                 Email = user.Email,
@@ -53,25 +57,36 @@ namespace eCart.API.Controllers
             };
         }
 
+        // CheckEmail of User EndPoint
         [HttpGet("email")]
         public async Task<ActionResult<bool>> CheckEmailExistsAsync([FromQuery] string email)
         {
+            // It will search the user by Email to verify either the user exists with the said email or not
             return await _userManager.FindByEmailAsync(email) != null;
         }
 
+        // Login EndPoint
         [HttpPost("login")]
         public async Task<ActionResult<UserDTO>> Login(LoginDTO loginDTO)
         {
+            // Get User by Email
             var user = await _userManager.FindByEmailAsync(loginDTO.Email);
+            // Return Unauthorized If user is null
             if (user == null) return Unauthorized(new ApiResponse(401));
 
+            // If user found
             if(user!=null && user.EmailConfirmed == true)
             {
+                // Verifying Password
                 var result = await _signInManager.CheckPasswordSignInAsync(user, loginDTO.Password, false);
+
+                // If password doesn't matched
                 if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
 
+                // If user succeeded
                 if (result.Succeeded)
                 {
+                    // Send Email that user login with date time
                     await _mailService.SendEmailAsyncBrevo(loginDTO.Email, user.DisplayName, "New Login", "<h1> Hey! new Login to your account notified</h1><p>New Login to your account at " + DateTime.Now + "</p>", "Login into E-Commerce Application");
 
                     //await _mailService.SendSMSAsyncBrevo("+923338437949", user.DisplayName, "Login into eCart Solution at " + DateTime.Now);
@@ -86,15 +101,22 @@ namespace eCart.API.Controllers
                     };
                 }
             }
-            // Using Microsoft Identity User Manager will check either the user exists with the passed email address.           
+            // Using Microsoft Identity User Manager will check either the user exists with the passed email address.
+            // This part will be called, if the user is registered but email is not confirmed.
             else if (user != null && user.EmailConfirmed == false)
             {
+                // It will generate confirmation email token
                 var confirmEmailToken = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
+                // Encoded Email Token
                 var encodedEmailToken = Encoding.UTF8.GetBytes(confirmEmailToken);
+                // Valid Email Token
                 var validEmailToken = WebEncoders.Base64UrlEncode(encodedEmailToken);
+
+                // String for Email Confirmation
                 string url = $"https://localhost:7167/api/Account/confirmemail?userid={user.Id}&token={validEmailToken}";
 
+                // Send Email
                 await _mailService.SendEmailAsyncBrevo(user.Email, user.DisplayName, "Confirm your email", "<h1>Welcome to E-Commerce Application</h1>" +
                     $"<p>Please confirm your email by <a href='{url}'>Clicking here</a></p>", "E-Commerce Application Registration Email");
 
@@ -104,14 +126,18 @@ namespace eCart.API.Controllers
             return Unauthorized(new ApiResponse(401));
         }
 
+        // Register User EndPoint
+        // To Register New User
         [HttpPost("register")]
         public async Task<ActionResult<UserDTO>> Register(RegisterDTO registerDTO)
         {
+            // Check if user exists with the following email
             if(CheckEmailExistsAsync(registerDTO.Email).Result.Value)
             {
                 return BadRequest(new ApiValidationErrorResponse{Errors = new[] {"Email Address is in use"}});
             }
 
+            // return user
             var user = new AppUser
             {
                 DisplayName = registerDTO.DisplayName,
@@ -119,8 +145,10 @@ namespace eCart.API.Controllers
                 UserName = registerDTO.Email
             };
 
+            // Create User
             var result = await _userManager.CreateAsync(user, registerDTO.Password);
 
+            // Generate Email Confirmatio Token
             var confirmEmailToken = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
             var encodedEmailToken = Encoding.UTF8.GetBytes(confirmEmailToken);

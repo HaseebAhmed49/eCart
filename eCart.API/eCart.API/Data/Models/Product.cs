@@ -20,4 +20,3 @@ namespace eCart.API.Models
         public int ProductBrandId { get; set; }
     }
 }
-
