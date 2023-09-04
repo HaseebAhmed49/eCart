@@ -148,16 +148,22 @@ namespace eCart.API.Controllers
             // Create User
             var result = await _userManager.CreateAsync(user, registerDTO.Password);
 
-            // Generate Email Confirmatio Token
+            // Generate Email Confirmation Token
             var confirmEmailToken = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
+            // Encoded Email Token
             var encodedEmailToken = Encoding.UTF8.GetBytes(confirmEmailToken);
+
+            // Valid Email Token
             var validEmailToken = WebEncoders.Base64UrlEncode(encodedEmailToken);
+            // Confirmation Email URL
             string url = $"https://localhost:7167/api/Account/confirmemail?userid={user.Id}&token={validEmailToken}";
 
+            // Send Email
             await _mailService.SendEmailAsyncBrevo(user.Email, user.DisplayName, "Confirm your email", "<h1>Welcome to E-Commerce Application</h1>" +
                 $"<p>Please confirm your email by <a href='{url}'>Clicking here</a></p>", "E-Commerce Application Registration Email");
 
+            // If result is not succeeded
             if (!result.Succeeded) return BadRequest(new ApiResponse(400));
             return new UserDTO
             {
@@ -168,23 +174,32 @@ namespace eCart.API.Controllers
             };
         }
 
+        // Confirm Email Address EndPoint
         // /api/auth/confirmemail?userid&token
         [HttpGet("ConfirmEmail")]
         public async Task<IActionResult> ConfirmEmailAddress(string userId, string token)
         {
+            // Check Null or White Spaces in userId or Token 
             if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(token))
                 return NotFound();
 
+            // Check user with userId
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
                 return BadRequest("User Not Found");
             }
 
+            // Decode Token
             var decodedToken = WebEncoders.Base64UrlDecode(token);
+
+            // Normal Token
             string normalToken = Encoding.UTF8.GetString(decodedToken);
 
+            // Verify User
             var result = await _userManager.ConfirmEmailAsync(user, normalToken);
+
+            // If User is genuine
             if (result.Succeeded)
             {
                 user.EmailConfirmed = true;
@@ -194,25 +209,32 @@ namespace eCart.API.Controllers
             return BadRequest(result);
         }
 
+        // Authorized EndPoint Get User Address
         [Authorize]
         [HttpGet("address")]
         public async Task<ActionResult<AddressDTO>> GetUserAddress()
         {
+            // Check User Address
             var user = await _userManager.FindUserByClaimsPrincipalWithAddress(User);
             return _mapper.Map<Address, AddressDTO>(user.Address);
         }
 
+        // Authorized Update User Adress EndPoint
         [Authorize]
         [HttpPut("address")]
         public async Task<ActionResult<AddressDTO>> UpdateUserAddress(AddressDTO address)
         {
+            // Find User
             var user = await _userManager.FindUserByClaimsPrincipalWithAddress(HttpContext.User);
+
+            // Update User Adress
             user.Address = _mapper.Map<AddressDTO, Address>(address);
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded) return Ok(_mapper.Map<Address, AddressDTO>(user.Address));
             return BadRequest("Problem updating the user");
         }
 
+        // Authorized Get All Users EndPoint
         [Authorize]
         [HttpGet("GetAllUsers")]
         public async Task<ActionResult<List<UserDTO>>> GetAllUsers()
