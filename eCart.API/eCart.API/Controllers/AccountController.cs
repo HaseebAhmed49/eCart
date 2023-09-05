@@ -239,8 +239,13 @@ namespace eCart.API.Controllers
         [HttpGet("GetAllUsers")]
         public async Task<ActionResult<List<UserDTO>>> GetAllUsers()
         {
+            // List for all Users
             List<UserDTO> users = new List<UserDTO>();
+
+            // Get All Users
             var data = await _userManager.Users.ToListAsync();
+
+            // Iterate over each user
             foreach (var user in _userManager.Users.ToList())
             {
                 UserDTO temp = new UserDTO
@@ -250,6 +255,8 @@ namespace eCart.API.Controllers
                 };
                 users.Add(temp);
             }
+
+            // Return list of all Users
             return Ok(users);
         }
     }
