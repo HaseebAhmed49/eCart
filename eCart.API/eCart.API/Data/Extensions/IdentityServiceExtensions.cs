@@ -23,7 +23,7 @@ namespace eCart.API.Data.Extensions
 			// PostGres
             services.AddDbContext<AppIdentityDbContext>(opt =>
             {
-                opt.UseNpgsql(config.GetConnectionString("IdentityConnection"));
+                opt.UseSqlite(config.GetConnectionString("IdentityConnection"));
             });
 
 

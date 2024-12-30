@@ -1,31 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/eCart.API.csproj": {}
+    "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj": {}
   },
   "projects": {
-    "/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/eCart.API.csproj": {
+    "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/eCart.API.csproj",
+        "projectUniqueName": "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj",
         "projectName": "eCart.API",
-        "projectPath": "/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/eCart.API.csproj",
-        "packagesPath": "/Users/haseebahmed/.nuget/packages/",
-        "outputPath": "/Users/haseebahmed/Desktop/dotNet/eCart/eCart.API/eCart.API/obj/",
+        "projectPath": "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj",
+        "packagesPath": "/home/haseebahmed/.nuget/packages/",
+        "outputPath": "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/haseebahmed/.nuget/NuGet/NuGet.Config"
+          "/home/haseebahmed/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net9.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/x64/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -33,11 +32,17 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -47,9 +52,13 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.2.8, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[7.0.8, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
@@ -57,29 +66,45 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.8, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.8, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.8, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[7.0.8, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[6.31.0, )"
+              "version": "[6.32.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
+            },
+            "SendWithBrevo": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             },
             "StackExchange.Redis": {
               "target": "Package",
-              "version": "[2.6.116, )"
+              "version": "[2.6.122, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[41.28.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -87,7 +112,11 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.31.0, )"
+              "version": "[6.32.1, )"
+            },
+            "sib_api_v3_sdk": {
+              "target": "Package",
+              "version": "[4.0.2, )"
             }
           },
           "imports": [
@@ -109,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.200/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/haseebahmed/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

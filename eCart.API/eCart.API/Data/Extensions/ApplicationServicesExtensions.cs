@@ -31,7 +31,7 @@ namespace eCart.API.Data.Extensions
             // PostGres
             services.AddDbContext<StoreContext>(opt =>
             {
-                opt.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
 
 

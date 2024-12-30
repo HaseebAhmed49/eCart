@@ -8,9 +8,10 @@ import { ShopService } from './shop.service';
 import { ExcelService } from '../core/export/excel.service';
 
 @Component({
-  selector: 'app-shop',
-  templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.scss']
+    selector: 'app-shop',
+    templateUrl: './shop.component.html',
+    styleUrls: ['./shop.component.scss'],
+    standalone: false
 })
 export class ShopComponent implements OnInit{
   @ViewChild('search') searchTerm? : ElementRef;
