@@ -32,7 +32,7 @@ import { SharedModule } from '../shared/shared.module';
     NgxSpinnerModule,
     SharedModule
   ],
-  exports:[
+  exports: [
     NavBarComponent,
     SectionHeaderComponent,
     NgxSpinnerModule

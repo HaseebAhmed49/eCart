@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj": {}
+    "/Users/haseebahmed/Desktop/dotNet/eCart.new/eCart/eCart.API/eCart.API/eCart.API.csproj": {}
   },
   "projects": {
-    "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj": {
+    "/Users/haseebahmed/Desktop/dotNet/eCart.new/eCart/eCart.API/eCart.API/eCart.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj",
+        "projectUniqueName": "/Users/haseebahmed/Desktop/dotNet/eCart.new/eCart/eCart.API/eCart.API/eCart.API.csproj",
         "projectName": "eCart.API",
-        "projectPath": "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj",
-        "packagesPath": "/home/haseebahmed/.nuget/packages/",
-        "outputPath": "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/obj/",
+        "projectPath": "/Users/haseebahmed/Desktop/dotNet/eCart.new/eCart/eCart.API/eCart.API/eCart.API.csproj",
+        "packagesPath": "/Users/haseebahmed/.nuget/packages/",
+        "outputPath": "/Users/haseebahmed/Desktop/dotNet/eCart.new/eCart/eCart.API/eCart.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/haseebahmed/.nuget/NuGet/NuGet.Config"
+          "/Users/haseebahmed/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -138,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/haseebahmed/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

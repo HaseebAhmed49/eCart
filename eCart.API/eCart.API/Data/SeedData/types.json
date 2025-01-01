@@ -1,18 +1,42 @@
 [
   {
     "Id": 1,
-    "Name": "Boards"
+    "Name": "Sportswear"
   },
   {
     "Id": 2,
-    "Name": "Hats"
+    "Name": "Electronics"
   },
   {
     "Id": 3,
-    "Name": "Boots"
+    "Name": "Footwear"
   },
   {
     "Id": 4,
-    "Name": "Gloves"
+    "Name": "Headphones"
+  },
+  {
+    "Id": 5,
+    "Name": "Smartphones"
+  },
+  {
+    "Id": 6,
+    "Name": "Laptops"
+  },
+  {
+    "Id": 7,
+    "Name": "Home Appliances"
+  },
+  {
+    "Id": 8,
+    "Name": "Fitness Equipment"
+  },
+  {
+    "Id": 9,
+    "Name": "Smartwatches"
+  },
+  {
+    "Id": 10,
+    "Name": "Gaming Consoles"
   }
 ]

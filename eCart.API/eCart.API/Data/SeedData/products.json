@@ -1,146 +1,330 @@
 [
   {
-    "Name": "Angular Speedster Board 2000",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 200,
-    "PictureUrl": "images/products/sb-ang1.png",
-    "ProductTypeId": 1,
+    "Name": "Nike Air Max 270",
+    "Description": "Comfortable and stylish running shoes with Max Air cushioning.",
+    "Price": 120,
+    "PictureUrl": "images/products/nike_air_max_270.jpg",
+    "ProductTypeId": 3,
     "ProductBrandId": 1
   },
   {
-    "Name": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
-    "PictureUrl": "images/products/sb-ang2.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 1
-  },
-  {
-    "Name": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Name": "Adidas Ultraboost 22",
+    "Description": "High-performance running shoes with responsive cushioning.",
     "Price": 180,
-    "PictureUrl": "images/products/sb-core1.png",
-    "ProductTypeId": 1,
+    "PictureUrl": "images/products/adidas_ultraboost_22.jpg",
+    "ProductTypeId": 3,
     "ProductBrandId": 2
   },
   {
-    "Name": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 300,
-    "PictureUrl": "images/products/sb-core2.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 2
+    "Name": "Puma RS-X3 Puzzle",
+    "Description": "Stylish sneakers with bold design and soft cushioning.",
+    "Price": 110,
+    "PictureUrl": "images/products/puma_rs_x3_puzzle.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 3
   },
   {
-    "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 250,
-    "PictureUrl": "images/products/sb-react1.png",
+    "Name": "Under Armour HOVR Phantom 2",
+    "Description": "Running shoes designed for maximum energy return.",
+    "Price": 140,
+    "PictureUrl": "images/products/under_armour_hovr_phantom_2.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Reebok Nano X1",
+    "Description": "Cross-trainer shoes perfect for intense workouts.",
+    "Price": 130,
+    "PictureUrl": "images/products/reebok_nano_x1.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Apple iPhone 14",
+    "Description": "The latest iPhone with advanced features and powerful performance.",
+    "Price": 999,
+    "PictureUrl": "images/products/apple_iphone_14.jpg",
+    "ProductTypeId": 5,
+    "ProductBrandId": 6
+  },
+  {
+    "Name": "Samsung Galaxy S23",
+    "Description": "Flagship smartphone with a stunning display and powerful camera.",
+    "Price": 899,
+    "PictureUrl": "images/products/samsung_galaxy_s23.jpg",
+    "ProductTypeId": 5,
+    "ProductBrandId": 7
+  },
+  {
+    "Name": "Sony WH-1000XM5",
+    "Description": "Noise-canceling over-ear headphones for superior sound quality.",
+    "Price": 350,
+    "PictureUrl": "images/products/sony_wh_1000xm5.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 8
+  },
+  {
+    "Name": "Bose QuietComfort 45",
+    "Description": "Premium noise-canceling headphones with exceptional sound.",
+    "Price": 329,
+    "PictureUrl": "images/products/bose_quietcomfort_45.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 9
+  },
+  {
+    "Name": "LG OLED55CXPUA",
+    "Description": "55-inch OLED TV with 4K resolution and AI-enhanced picture quality.",
+    "Price": 1499,
+    "PictureUrl": "images/products/lg_oled55cxpua.jpg",
+    "ProductTypeId": 7,
+    "ProductBrandId": 10
+  },
+  {
+    "Name": "Apple MacBook Pro 14",
+    "Description": "Powerful laptop with Apple M1 Pro chip and stunning Retina display.",
+    "Price": 1999,
+    "PictureUrl": "images/products/apple_macbook_pro_14.jpg",
+    "ProductTypeId": 6,
+    "ProductBrandId": 6
+  },
+  {
+    "Name": "Samsung Galaxy Watch 5",
+    "Description": "Smartwatch with advanced health tracking and sleek design.",
+    "Price": 299,
+    "PictureUrl": "images/products/samsung_galaxy_watch_5.jpg",
+    "ProductTypeId": 9,
+    "ProductBrandId": 7
+  },
+  {
+    "Name": "Puma Training Gloves",
+    "Description": "Comfortable gloves for fitness training with extra grip.",
+    "Price": 25,
+    "PictureUrl": "images/products/puma_training_gloves.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Under Armour T-shirt",
+    "Description": "Breathable, moisture-wicking t-shirt for activewear.",
+    "Price": 40,
+    "PictureUrl": "images/products/under_armour_tshirt.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 4
   },
   {
-    "Name": "Typescript Entry Board",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 120,
-    "PictureUrl": "images/products/sb-ts1.png",
+    "Name": "Reebok Yoga Mat",
+    "Description": "Non-slip yoga mat for comfort and stability during practice.",
+    "Price": 30,
+    "PictureUrl": "images/products/reebok_yoga_mat.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Nike Sports Bra",
+    "Description": "Supportive sports bra for high-impact activities.",
+    "Price": 50,
+    "PictureUrl": "images/products/nike_sports_bra.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Adidas Track Pants",
+    "Description": "Comfortable track pants perfect for workouts and casual wear.",
+    "Price": 60,
+    "PictureUrl": "images/products/adidas_track_pants.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "Apple AirPods Pro",
+    "Description": "Wireless earbuds with active noise cancellation and superior sound.",
+    "Price": 249,
+    "PictureUrl": "images/products/apple_airpods_pro.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 6
+  },
+  {
+    "Name": "Sony PlayStation 5",
+    "Description": "Next-gen gaming console with ultra-fast loading and exclusive games.",
+    "Price": 499,
+    "PictureUrl": "images/products/sony_playstation_5.jpg",
+    "ProductTypeId": 10,
+    "ProductBrandId": 8
+  },
+  {
+    "Name": "Bose SoundLink Revolve+",
+    "Description": "Portable Bluetooth speaker with 360-degree sound.",
+    "Price": 299,
+    "PictureUrl": "images/products/bose_soundlink_revolve_plus.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 9
+  },
+  {
+    "Name": "LG CordZero A9",
+    "Description": "Cordless vacuum cleaner with powerful suction and long battery life.",
+    "Price": 599,
+    "PictureUrl": "images/products/lg_cordzero_a9.jpg",
+    "ProductTypeId": 7,
+    "ProductBrandId": 10
+  },
+  {
+    "Name": "Nike Dri-FIT Hoodie",
+    "Description": "Moisture-wicking hoodie designed for comfort during workouts.",
+    "Price": 75,
+    "PictureUrl": "images/products/nike_dri_fit_hoodie.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Adidas Predator Edge Cleats",
+    "Description": "High-performance soccer cleats for optimal control on the field.",
+    "Price": 200,
+    "PictureUrl": "images/products/adidas_predator_edge.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "Puma Running Shorts",
+    "Description": "Lightweight and breathable running shorts for daily workouts.",
+    "Price": 35,
+    "PictureUrl": "images/products/puma_running_shorts.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Under Armour Training Shoes",
+    "Description": "Durable training shoes designed for intense gym sessions.",
+    "Price": 100,
+    "PictureUrl": "images/products/under_armour_training_shoes.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Reebok CrossFit T-Shirt",
+    "Description": "Soft and comfortable t-shirt designed for CrossFit training.",
+    "Price": 30,
+    "PictureUrl": "images/products/reebok_crossfit_tshirt.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 5
   },
   {
-    "Name": "Core Blue Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 10,
-    "PictureUrl": "images/products/hat-core1.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Green React Woolen Hat",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 8,
-    "PictureUrl": "images/products/hat-react1.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Purple React Woolen Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 15,
-    "PictureUrl": "images/products/hat-react2.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Blue Code Gloves",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 18,
-    "PictureUrl": "images/products/glove-code1.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 3
-  },
-  {
-    "Name": "Green Code Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 15,
-    "PictureUrl": "images/products/glove-code2.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 3
-  },
-  {
-    "Name": "Purple React Gloves",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-    "Price": 16,
-    "PictureUrl": "images/products/glove-react1.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Green React Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14,
-    "PictureUrl": "images/products/glove-react2.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Redis Red Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 250,
-    "PictureUrl": "images/products/boot-redis1.png",
-    "ProductTypeId": 3,
+    "Name": "Apple iPad Pro 12.9",
+    "Description": "High-performance tablet with Liquid Retina display and M2 chip.",
+    "Price": 1099,
+    "PictureUrl": "images/products/apple_ipad_pro.jpg",
+    "ProductTypeId": 6,
     "ProductBrandId": 6
   },
   {
-    "Name": "Core Red Boots",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 189.99,
-    "PictureUrl": "images/products/boot-core2.png",
+    "Name": "Samsung Galaxy Tab S9",
+    "Description": "Premium Android tablet with AMOLED display and long battery life.",
+    "Price": 849,
+    "PictureUrl": "images/products/samsung_galaxy_tab_s9.jpg",
+    "ProductTypeId": 6,
+    "ProductBrandId": 7
+  },
+  {
+    "Name": "Sony Xperia 1 V",
+    "Description": "Flagship smartphone with professional-grade camera and 4K display.",
+    "Price": 1299,
+    "PictureUrl": "images/products/sony_xperia_1_v.jpg",
+    "ProductTypeId": 5,
+    "ProductBrandId": 8
+  },
+  {
+    "Name": "Bose Sport Earbuds",
+    "Description": "True wireless earbuds designed for a secure and comfortable fit during workouts.",
+    "Price": 179,
+    "PictureUrl": "images/products/bose_sport_earbuds.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 9
+  },
+  {
+    "Name": "LG UltraGear Gaming Monitor",
+    "Description": "27-inch QHD monitor with 165Hz refresh rate and 1ms response time.",
+    "Price": 499,
+    "PictureUrl": "images/products/lg_ultragear_monitor.jpg",
+    "ProductTypeId": 10,
+    "ProductBrandId": 10
+  },
+  {
+    "Name": "Nike Yoga Pants",
+    "Description": "Stretchable and comfortable yoga pants for flexibility and movement.",
+    "Price": 65,
+    "PictureUrl": "images/products/nike_yoga_pants.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Adidas Samba OG",
+    "Description": "Classic sneakers with a timeless design and durable leather upper.",
+    "Price": 80,
+    "PictureUrl": "images/products/adidas_samba_og.jpg",
     "ProductTypeId": 3,
     "ProductBrandId": 2
   },
   {
-    "Name": "Core Purple Boots",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 199.99,
-    "PictureUrl": "images/products/boot-core1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 2
+    "Name": "Puma Gym Duffel Bag",
+    "Description": "Spacious and durable gym bag with multiple compartments.",
+    "Price": 50,
+    "PictureUrl": "images/products/puma_gym_duffel_bag.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 3
   },
   {
-    "Name": "Angular Purple Boots",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 150,
-    "PictureUrl": "images/products/boot-ang2.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 1
+    "Name": "Under Armour Compression Leggings",
+    "Description": "Tight-fitting leggings that enhance performance and recovery.",
+    "Price": 55,
+    "PictureUrl": "images/products/under_armour_compression_leggings.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 4
   },
   {
-    "Name": "Angular Blue Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/boot-ang1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 1
+    "Name": "Reebok Step Platform",
+    "Description": "Adjustable step platform for cardio and strength training.",
+    "Price": 120,
+    "PictureUrl": "images/products/reebok_step_platform.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Apple Watch Series 9",
+    "Description": "Advanced smartwatch with health tracking and fitness features.",
+    "Price": 399,
+    "PictureUrl": "images/products/apple_watch_series_9.jpg",
+    "ProductTypeId": 9,
+    "ProductBrandId": 6
+  },
+  {
+    "Name": "Samsung Galaxy Buds 2 Pro",
+    "Description": "Premium wireless earbuds with active noise cancellation.",
+    "Price": 229,
+    "PictureUrl": "images/products/buds_pro2.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 7
+  },
+  {
+    "Name": "Sony Bravia XR OLED",
+    "Description": "65-inch OLED TV with XR processor for lifelike picture quality.",
+    "Price": 2499,
+    "PictureUrl": "images/products/Sony_bravia_xrled.png",
+    "ProductTypeId": 7,
+    "ProductBrandId": 8
+  },
+  {
+    "Name": "Bose Portable Smart Speaker",
+    "Description": "Compact smart speaker with 360-degree sound and voice control.",
+    "Price": 399,
+    "PictureUrl": "images/products/bose_portable_smart_speaker.jpeg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 9
+  },
+  {
+    "Name": "LG InstaView Refrigerator",
+    "Description": "Smart refrigerator with a glass panel that illuminates with two knocks.",
+    "Price": 2999,
+    "PictureUrl": "images/products/lg_instaview.png",
+    "ProductTypeId": 7,
+    "ProductBrandId": 10
   }
 ]

@@ -9705,19 +9705,19 @@
     ]
   },
   "packageFolders": {
-    "/home/haseebahmed/.nuget/packages/": {}
+    "/Users/haseebahmed/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj",
+      "projectUniqueName": "/Users/haseebahmed/Desktop/dotNet/eCart.new/eCart/eCart.API/eCart.API/eCart.API.csproj",
       "projectName": "eCart.API",
-      "projectPath": "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/eCart.API.csproj",
-      "packagesPath": "/home/haseebahmed/.nuget/packages/",
-      "outputPath": "/home/haseebahmed/Desktop/dotnet-projects/eCart/eCart.API/eCart.API/obj/",
+      "projectPath": "/Users/haseebahmed/Desktop/dotNet/eCart.new/eCart/eCart.API/eCart.API/eCart.API.csproj",
+      "packagesPath": "/Users/haseebahmed/.nuget/packages/",
+      "outputPath": "/Users/haseebahmed/Desktop/dotNet/eCart.new/eCart/eCart.API/eCart.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/haseebahmed/.nuget/NuGet/NuGet.Config"
+        "/Users/haseebahmed/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -9841,20 +9841,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/haseebahmed/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.32.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "libraryId": "System.IdentityModel.Tokens.Jwt",
-      "targetGraphs": [
-        "net9.0"
-      ]
-    }
-  ]
+  }
 }
