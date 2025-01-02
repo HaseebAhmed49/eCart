@@ -37,6 +37,7 @@ This eCommerce platform allows customers to browse products, add them to the sho
   - Entity Framework Core
   - Redis for Caching as Performance Optimization
   - SQLite (for database storage)
+  - Stripe for Payment Processing
   
 - **Frontend**:
   - Angular 19
@@ -62,13 +63,20 @@ This eCommerce platform allows customers to browse products, add them to the sho
    dotnet restore
    ```
 
-3. Set up the database (SQLite path "eCart.API/eCart.API/Data/Database"):
+3. Set up the database and secret Keys for Email Notification and Stripe Payment in appsettings.json 
+
+  **(SQLite path "eCart.API/eCart.API/Data/Database"):**
 
    ![image](https://github.com/user-attachments/assets/d334ae2b-871f-4877-97b6-3f1c4c5526ed)
 
-4. Configure redis on your local machine as localhost as shown in above image
+  **Secret Keys**
 
-5. Run the backend:
+   ![image](https://github.com/user-attachments/assets/ba01e03f-4337-4e11-9b9e-81f4d7a8e44f)
+
+
+5. Configure **Redis** for caching on your local machine as localhost as shown in the above image
+
+6. Run the backend:
 
    ```
    dotnet run
