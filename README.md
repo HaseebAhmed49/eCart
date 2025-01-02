@@ -35,6 +35,7 @@ This eCommerce platform allows customers to browse products, add them to the sho
 - **Backend**: 
   - .NET 9.0 (ASP.NET Core Web API)
   - Entity Framework Core
+  - Redis for Caching as Performance Optimization
   - SQLite (for database storage)
   
 - **Frontend**:
@@ -54,3 +55,55 @@ This eCommerce platform allows customers to browse products, add them to the sho
    ```bash
    git clone https://github.com/HaseebAhmed49/eCart
    cd eCart
+
+2. Navigate to the backend folder and restore the dependencies:
+   ``` bash
+   cd eCart.API/eCart.API
+   dotnet restore
+
+3. Set up the database (SQLite path "eCart.API/eCart.API/Data/Database"):
+   ![image](https://github.com/user-attachments/assets/d334ae2b-871f-4877-97b6-3f1c4c5526ed)
+
+4. Configure redis on your local machine as localhost as shown in above image
+4. Run the backend:
+
+   ``` bash
+   dotnet run
+
+   The backend will be available at https://localhost:7167.
+   Swagger Link: https://localhost:7167/swagger.html
+
+### Front Setup
+
+1. Navigate to the frontend folder:
+
+   ```bash
+   cd eCart.SPA
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+
+3. Run the frontend:
+
+  ``` bash
+  ng serve -o
+
+The frontend will be available at https://localhost:4200.
+
+## Usage
+Once both the backend and frontend are running, you can:
+	1.	Open the frontend application in your browser (http://localhost:4200).
+	2.	Register a new account or log in with an existing account.
+	3.	Browse the product catalog, add items to the shopping cart, and proceed to checkout.
+	4.	Admin users can log in to manage products and orders.
+
+## API Documentation
+
+## Contributing
+
+We welcome contributions! If you would like to contribute to the project, please fork the repository and submit a pull request. Make sure to follow the code style and add documentation for any new features or bug fixes.
+
+## License
+This project is free to use for learning purposes.
