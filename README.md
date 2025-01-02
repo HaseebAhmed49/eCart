@@ -38,11 +38,26 @@ This eCommerce platform allows customers to browse products, add them to the sho
   - Redis for Caching as Performance Optimization
   - SQLite (for database storage)
   - Stripe for Payment Processing
-  
+  - Package Categorization
+
+  | **Category**       | **Packages**                                                                                 |
+  |---------------------|---------------------------------------------------------------------------------------------|
+  | **Frameworks**      | 1. Microsoft.AspNetCore.Identity  <br> 2. Microsoft.AspNetCore.Identity.EntityFrameworkCore  <br> 3. Microsoft.EntityFrameworkCore.Design  <br> 4. Microsoft.EntityFrameworkCore.Sqlite  <br> 5. Npgsql.EntityFrameworkCore.PostgreSQL  <br> 6. Microsoft.AspNetCore.Authentication.JwtBearer |
+  | **Tools**           | 1. Swashbuckle.AspNetCore  <br> 2. AutoMapper.Extensions.Microsoft.DependencyInjection       |
+  | **Libraries**       | 1. AutoMapper  <br> 2. EPPlus  <br> 3. Microsoft.IdentityModel.Tokens  <br> 4. System.IdentityModel.Tokens.Jwt  <br> 5. StackExchange.Redis  <br> 6. SendGrid  <br> 7. SendWithBrevo  <br> 8. sib_api_v3_sdk  <br> 9. Stripe.net |
+  | **Hybrid**          | 1. Microsoft.AspNetCore.OpenApi                                                             |
+      
 - **Frontend**:
   - Angular 19
   - Angular Material for UI components
   - RxJS for reactive programming
+  - Package Categorization
+
+  | **Category**       | **Packages**                                                                                 |
+  |---------------------|---------------------------------------------------------------------------------------------|
+  | **Frameworks**      | 1. @angular/animations <br> 2. @angular/cdk <br> 3. @angular/cli <br> 4. @angular/common <br> 5. @angular/compiler <br> 6. @angular/compiler-cli <br> 7. @angular/core <br> 8. @angular/forms <br> 9. @angular/platform-browser <br> 10. @angular/platform-browser-dynamic <br> 11. @angular/router |
+  | **Tools**           | 1. @angular-devkit/build-angular <br> 2. @types/jasmine <br> 3. jasmine-core <br> 4. karma <br> 5. karma-chrome-launcher <br> 6. karma-coverage <br> 7. karma-jasmine <br> 8. karma-jasmine-html-reporter <br> 9. typescript <br> 10. zone.js |
+  | **Libraries**       | 1. @stripe/stripe-js <br> 2. bootstrap <br> 3. bootswatch <br> 4. cuid <br> 5. font-awesome <br> 6. ngx-bootstrap <br> 7. ngx-spinner <br> 8. ngx-toastr <br> 9. rxjs <br> 10. tslib <br> 11. xlsx <br> 12. xng-breadcrumb |
   
 - **Authentication**:
   - JWT (JSON Web Tokens) for user authentication
@@ -115,6 +130,41 @@ Once both the backend and frontend are running, you can:
 4. Admin users can log in to manage products and orders.
 
 ## API Documentation
+
+  ### Controller: Account
+  1. | GET | paths['/api/Account']
+  2. | GET | paths['/api/Account/email']
+  3. | POST | paths['/api/Account/login']
+  4. | POST | paths['/api/Account/register']
+  5. | GET | paths['/api/Account/ConfirmEmail']
+  6. | GET | paths['/api/Account/address']
+  7. | PUT | paths['/api/Account/address']
+  8. | GET | paths['/api/Account/GetAllUsers']
+  
+  ### Controller: Basket
+  1. | GET | paths['/api/Basket']
+  2. | POST | paths['/api/Basket']
+  3. | DELETE | paths['/api/Basket']
+  
+  ### Controller: Excel
+  1. | POST | paths['/api/Excel/export']
+  
+  ### Controller: Orders
+  1. | POST | paths['/api/Orders']
+  2. | GET | paths['/api/Orders']
+  3. | GET | paths['/api/Orders/{id}']
+  4. | GET | paths['/api/Orders/delivery']
+  
+  ### Controller: Payments
+  1. | POST | paths['/api/Payments/{basketId}']
+  2. | POST | paths['/api/Payments/webHook']
+  
+  ### Controller: Products
+  1. | GET | paths['/api/Products/get-products-without-pagination']
+  2. | GET | paths['/api/Products']
+  3. | GET | paths['/api/Products/{id}']
+  4. | GET | paths['/api/Products/brands']
+  5. | GET | paths['/api/Products/types']
 
 ## Contributing
 
