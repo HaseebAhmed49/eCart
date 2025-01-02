@@ -88,7 +88,7 @@ This eCommerce platform allows customers to browse products, add them to the sho
 3. Run the frontend:
 
   ``` bash
-  ng serve -o
+  ng serve -o ```
 
 The frontend will be available at https://localhost:4200.
 
