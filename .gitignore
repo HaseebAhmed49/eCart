@@ -11,7 +11,8 @@ eCart.API/.vs/eCart.API/xs/project-cache/eCart.API-Debug.json
 bin/
 obj/
 
+**/obj/
+**/appsettings.json
 eCart.API/eCart.API/bin/
-eCart.API/eCart.API/appsettings.json
 appsettings.json
 eCart.API/eCart.API/appsettings.json
