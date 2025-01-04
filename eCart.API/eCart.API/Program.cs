@@ -40,6 +40,14 @@ app.UseSwaggerDocumentation();
 
 app.UseHttpsRedirection();
 
+var contentPath = Path.Combine(Directory.GetCurrentDirectory(), "Data/Content");
+
+// Ensure the directory exists
+if (!Directory.Exists(contentPath))
+{
+    Directory.CreateDirectory(contentPath);
+}
+
 app.UseStaticFiles();
 app.UseStaticFiles(new StaticFileOptions
 {
