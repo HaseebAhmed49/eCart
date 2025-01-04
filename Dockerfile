@@ -9,12 +9,12 @@ WORKDIR /src
 COPY ["eCart.API/eCart.API/eCart.API.csproj", "eCart.API/"]
 RUN dotnet restore "eCart.API/eCart.API.csproj"
 COPY . .
-WORKDIR "/eCart.API/eCart.API"
-RUN dotnet build "eCart.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "eCart.API/eCart.API"
+RUN dotnet build "eCart.API/eCart.APIeCart.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "eCart.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish
+RUN dotnet publish "eCart.API/eCart.APIeCart.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish
 
 FROM base AS final
 WORKDIR /app
