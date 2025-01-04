@@ -13,6 +13,7 @@ obj/
 
 **/obj/
 **/appsettings.json
+**/.vs
 eCart.API/eCart.API/bin/
 appsettings.json
 eCart.API/eCart.API/appsettings.json
